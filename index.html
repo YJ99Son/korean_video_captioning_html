@@ -345,7 +345,7 @@
     <!-- SLIDE 1: Title -->
     <div class="slide-wrapper" id="slide-0">
         <section class="slide">
-            <span class="slide-number">01 — 15</span>
+            <span class="slide-number">01 — 16</span>
             <div>
                 <p class="label">Video Captioning Project</p>
                 <h1><span class="accent">한국어</span><br>Video Captioning</h1>
@@ -358,7 +358,7 @@
     <!-- SLIDE 2: Project Philosophy -->
     <div class="slide-wrapper" id="slide-1">
         <section class="slide">
-            <span class="slide-number">02 — 15</span>
+            <span class="slide-number">02 — 16</span>
             <p class="label">Project Approach</p>
             <h2>정해진 시간과 자원 안에서 <span class="accent">할 수 있는 것</span>을 명확히</h2>
             
@@ -404,7 +404,7 @@
     <!-- SLIDE 3: Dataset EDA -->
     <div class="slide-wrapper" id="slide-2">
         <section class="slide">
-            <span class="slide-number">03 — 15</span>
+            <span class="slide-number">03 — 16</span>
             <div>
                 <p class="label">Dataset EDA</p>
                 <h2>AI Hub <span class="accent">대한민국 배경영상</span></h2>
@@ -487,7 +487,7 @@
     <!-- SLIDE 4: LLaVA Architecture (Overview) -->
     <div class="slide-wrapper" id="slide-3">
         <section class="slide">
-            <span class="slide-number">04 — 15</span>
+            <span class="slide-number">04 — 16</span>
             <div>
                 <p class="label">Architecture</p>
                 <h2>LLaVA <span class="accent">아키텍처</span></h2>
@@ -605,7 +605,7 @@
     <!-- SLIDE 5: Goals -->
     <div class="slide-wrapper" id="slide-4">
         <section class="slide">
-            <span class="slide-number">05 — 15</span>
+            <span class="slide-number">05 — 16</span>
             <div>
                 <p class="label">Goals</p>
                 <h2>핵심 질문 & <span class="accent">목표</span></h2>
@@ -646,7 +646,7 @@
     <!-- SLIDE 6: Experiment Plan -->
     <div class="slide-wrapper" id="slide-5">
         <section class="slide">
-            <span class="slide-number">06 — 15</span>
+            <span class="slide-number">06 — 16</span>
             <div>
                 <p class="label">Experiment Plan</p>
                 <h2>실험 <span class="accent">계획</span></h2>
@@ -709,7 +709,7 @@
     <!-- SLIDE 7: LLaVA Architecture - 명확한 두 인풋 -->
     <div class="slide-wrapper" id="slide-6">
         <section class="slide">
-            <span class="slide-number">07 — 15</span>
+            <span class="slide-number">07 — 16</span>
             <div>
                 <p class="label">Architecture</p>
                 <h2>LLaVA <span class="accent">아키텍처</span></h2>
@@ -827,7 +827,7 @@
     <!-- SLIDE 8: Video-LLaVA Architecture + Training Strategy -->
     <div class="slide-wrapper" id="slide-7">
         <section class="slide">
-            <span class="slide-number">08 — 15</span>
+            <span class="slide-number">08 — 16</span>
             <div>
                 <p class="label">Architecture + Training</p>
                 <h2>Video-LLaVA <span class="accent">Pipeline & 학습 전략</span></h2>
@@ -995,7 +995,7 @@
     <!-- SLIDE 9: 모델 선택 (Vision Encoder + LLM + Projector 요약) -->
     <div class="slide-wrapper" id="slide-8">
         <section class="slide">
-            <span class="slide-number">09 — 15</span>
+            <span class="slide-number">09 — 16</span>
             <div>
                 <p class="label">Model Selection</p>
                 <h2>컴포넌트 <span class="accent">선택</span></h2>
@@ -1075,7 +1075,7 @@
     <!-- SLIDE 10: Projector Detail Explanation -->
     <div class="slide-wrapper" id="slide-9">
         <section class="slide">
-            <span class="slide-number">10 — 15</span>
+            <span class="slide-number">10 — 16</span>
             <div>
                 <p class="label">Architecture Detail</p>
                 <h2>Projector <span class="accent">상세 구조</span></h2>
@@ -1352,7 +1352,7 @@
     <!-- SLIDE 11: Optimizations Mapped to Architecture -->
     <div class="slide-wrapper" id="slide-10">
         <section class="slide">
-            <span class="slide-number">11 — 15</span>
+            <span class="slide-number">11 — 16</span>
             <div>
                 <p class="label">Optimizations</p>
                 <h2>적용된 <span class="accent">최적화</span></h2>
@@ -1414,26 +1414,84 @@
                 </div>
             </div>
             
-            <!-- 효과 요약 -->
-            <div style="margin-top: 20px; padding: 16px 20px; background: var(--gray-900); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="font-size: 12px; color: var(--gray-300);">
-                        <span class="accent" style="font-weight: 700;">결과</span> &nbsp; 
-                        A100 80GB에서 배치사이즈 4로 안정적 학습 가능
-                    </div>
-                    <div style="display: flex; gap: 20px; font-size: 11px;">
-                        <span><span style="color: var(--accent); font-weight: 700;">~5GB</span> LLM 메모리</span>
-                        <span><span style="color: var(--accent); font-weight: 700;">~10h</span> 학습 시간</span>
-                    </div>
+        </section>
+    </div>
+
+    <!-- SLIDE 12: Memory Usage Table -->
+    <div class="slide-wrapper" id="slide-11">
+        <section class="slide">
+            <span class="slide-number">12 — 16</span>
+            <div>
+                <p class="label">Memory Analysis</p>
+                <h2>메모리 <span class="accent">사용량</span></h2>
+            </div>
+            
+            <!-- 메모리 테이블 -->
+            <div style="margin-top: 24px; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 8px; overflow: hidden;">
+                <!-- 헤더 -->
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 14px 20px; background: var(--gray-800); border-bottom: 1px solid var(--gray-700);">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent);">Component</div>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-align: right;">Memory</div>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-align: right;">비고</div>
+                </div>
+                <!-- 행들 -->
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-800);">
+                    <div style="font-size: 12px; color: var(--gray-300);">Vision Encoder <span style="color: #87CEEB;">(❄️ frozen)</span></div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--white); text-align: right;">~1.2GB</div>
+                    <div style="font-size: 11px; color: var(--gray-500); text-align: right;">추론 모드, 그래디언트 X</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-800); background: rgba(156,39,176,0.1);">
+                    <div style="font-size: 12px; color: var(--gray-300);">LLM <span style="color: #9C27B0;">(4-bit)</span></div>
+                    <div style="font-size: 12px; font-weight: 700; color: #9C27B0; text-align: right;">~5GB</div>
+                    <div style="font-size: 11px; color: var(--gray-500); text-align: right;">NF4 양자화 적용</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-800);">
+                    <div style="font-size: 12px; color: var(--gray-300);">Projector</div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--white); text-align: right;">~0.8GB</div>
+                    <div style="font-size: 11px; color: var(--gray-500); text-align: right;">Linear: 4M params</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-800);">
+                    <div style="font-size: 12px; color: var(--gray-300);">Optimizer states</div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--white); text-align: right;">~8GB</div>
+                    <div style="font-size: 11px; color: var(--gray-500); text-align: right;">AdamW 8-bit 최적화</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-800); background: rgba(144,238,144,0.1);">
+                    <div style="font-size: 12px; color: var(--gray-300);">Activations <span style="color: #90EE90;">(checkpoint)</span></div>
+                    <div style="font-size: 12px; font-weight: 700; color: #90EE90; text-align: right;">~15GB</div>
+                    <div style="font-size: 11px; color: var(--gray-500); text-align: right;">gradient checkpointing</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-800); background: rgba(255,217,61,0.1);">
+                    <div style="font-size: 12px; color: var(--gray-300);">Batch <span style="color: #ffd93d;">(16 × 8 frames)</span></div>
+                    <div style="font-size: 12px; font-weight: 700; color: #ffd93d; text-align: right;">~20GB</div>
+                    <div style="font-size: 11px; color: var(--gray-500); text-align: right;">Mixed Precision 적용</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 12px 20px; border-bottom: 1px solid var(--gray-700);">
+                    <div style="font-size: 12px; color: var(--gray-500);">여유</div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--gray-500); text-align: right;">~30GB</div>
+                    <div style="font-size: 11px; color: var(--gray-600); text-align: right;">안전 마진</div>
+                </div>
+                <!-- 합계 -->
+                <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 14px 20px; background: var(--gray-800);">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--accent);">TOTAL</div>
+                    <div style="font-size: 16px; font-weight: 900; color: var(--accent); text-align: right;">~50GB</div>
+                    <div style="font-size: 12px; font-weight: 600; color: var(--accent); text-align: right;">A100 80GB ✓ 충분</div>
+                </div>
+            </div>
+            
+            <!-- 결론 -->
+            <div style="margin-top: 20px; padding: 14px 20px; background: var(--gray-900); border-left: 4px solid var(--accent);">
+                <div style="font-size: 12px; color: var(--gray-300);">
+                    <span class="accent" style="font-weight: 700;">결론</span> &nbsp; 
+                    최적화 기법 적용으로 A100 80GB에서 <span class="accent">배치사이즈 16</span>으로 안정적 학습 가능
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- SLIDE 12: Results -->
-    <div class="slide-wrapper" id="slide-11">
+    <!-- SLIDE 13: Results -->
+    <div class="slide-wrapper" id="slide-12">
         <section class="slide">
-            <span class="slide-number">12 — 15</span>
+            <span class="slide-number">13 — 16</span>
             <div>
                 <p class="label">Results</p>
                 <h2>실험 <span class="accent">결과</span></h2>
@@ -1480,10 +1538,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 13: Key Lessons -->
-    <div class="slide-wrapper" id="slide-12">
+    <!-- SLIDE 14: Key Lessons -->
+    <div class="slide-wrapper" id="slide-13">
         <section class="slide">
-            <span class="slide-number">13 — 15</span>
+            <span class="slide-number">14 — 16</span>
             <div>
                 <p class="label">Lessons Learned</p>
                 <h2>핵심 <span class="accent">교훈</span></h2>
@@ -1508,10 +1566,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 14: Decision Options -->
-    <div class="slide-wrapper" id="slide-13">
+    <!-- SLIDE 15: Decision Options -->
+    <div class="slide-wrapper" id="slide-14">
         <section class="slide">
-            <span class="slide-number">14 — 15</span>
+            <span class="slide-number">15 — 16</span>
             <div>
                 <p class="label">Experiment Status</p>
                 <h2>실험 <span class="accent">현황</span></h2>
@@ -1631,10 +1689,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 15: Roadmap -->
-    <div class="slide-wrapper" id="slide-14">
+    <!-- SLIDE 16: Roadmap -->
+    <div class="slide-wrapper" id="slide-15">
         <section class="slide" style="text-align: center;">
-            <span class="slide-number">15 — 15</span>
+            <span class="slide-number">16 — 16</span>
             <div style="max-width: 800px; margin: 0 auto;">
                 <p class="label">Roadmap</p>
                 <h2>다음 <span class="accent">단계</span></h2>
