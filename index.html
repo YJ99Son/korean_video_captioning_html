@@ -588,7 +588,7 @@
         </section>
     </div>
 
-    <!-- SLIDE 6: LLaVA Architecture (Image Version) - 원본 스타일 -->
+    <!-- SLIDE 6: LLaVA Architecture - 명확한 두 인풋 -->
     <div class="slide-wrapper" id="slide-5">
         <section class="slide">
             <span class="slide-number">06 — 14</span>
@@ -597,99 +597,110 @@
                 <h2>LLaVA <span class="accent">아키텍처</span></h2>
             </div>
             
-            <!-- 원본 스타일: 가로 파이프라인 -->
-            <div style="padding: 24px; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 8px; margin-top: 16px;">
-                <svg width="100%" height="180" viewBox="0 0 900 180" preserveAspectRatio="xMidYMid meet">
-                    <!-- ========== 상단: 메인 파이프라인 ========== -->
+            <!-- 인풋 2개 + 파이프라인 명확화 -->
+            <div style="padding: 20px; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 8px; margin-top: 16px;">
+                <svg width="100%" height="220" viewBox="0 0 900 220" preserveAspectRatio="xMidYMid meet">
+                    <!-- ========== 상단: 이미지 파이프라인 ========== -->
                     <!-- Image Input -->
-                    <rect x="20" y="50" width="80" height="60" rx="6" fill="#262626" stroke="#87CEEB" stroke-width="2"/>
-                    <rect x="28" y="58" width="64" height="44" rx="4" fill="#171717"/>
-                    <polygon points="55,72 55,90 70,81" fill="#87CEEB" opacity="0.6"/>
-                    <text x="60" y="125" text-anchor="middle" fill="#87CEEB" font-size="10" font-weight="600">Image</text>
+                    <rect x="20" y="30" width="90" height="65" rx="6" fill="#262626" stroke="#87CEEB" stroke-width="2"/>
+                    <rect x="30" y="40" width="70" height="45" rx="4" fill="#171717"/>
+                    <polygon points="58,52 58,72 76,62" fill="#87CEEB" opacity="0.7"/>
+                    <text x="65" y="105" text-anchor="middle" fill="#87CEEB" font-size="11" font-weight="700">Image</text>
                     
-                    <!-- Arrow -->
-                    <line x1="105" y1="80" x2="140" y2="80" stroke="#525252" stroke-width="2"/>
-                    <polygon points="145,80 138,75 138,85" fill="#525252"/>
+                    <!-- Arrow to Vision Encoder -->
+                    <line x1="115" y1="62" x2="150" y2="62" stroke="#87CEEB" stroke-width="2"/>
+                    <polygon points="155,62 148,57 148,67" fill="#87CEEB"/>
                     
                     <!-- Vision Encoder -->
-                    <rect x="150" y="45" width="120" height="70" rx="6" fill="#87CEEB" fill-opacity="0.15" stroke="#87CEEB" stroke-width="2"/>
-                    <text x="210" y="75" text-anchor="middle" fill="#87CEEB" font-size="11" font-weight="600">Vision Encoder</text>
-                    <text x="210" y="95" text-anchor="middle" fill="#525252" font-size="9">CLIP ViT (Frozen)</text>
+                    <rect x="160" y="25" width="130" height="75" rx="6" fill="#87CEEB" fill-opacity="0.15" stroke="#87CEEB" stroke-width="2"/>
+                    <text x="225" y="55" text-anchor="middle" fill="#87CEEB" font-size="12" font-weight="700">Vision Encoder</text>
+                    <text x="225" y="75" text-anchor="middle" fill="#525252" font-size="10">CLIP ViT</text>
+                    <rect x="170" y="82" width="50" height="14" rx="2" fill="#525252"/>
+                    <text x="195" y="92" text-anchor="middle" fill="#262626" font-size="8" font-weight="700">FROZEN</text>
                     
-                    <!-- Arrow + Visual Features -->
-                    <line x1="275" y1="80" x2="320" y2="80" stroke="#525252" stroke-width="2"/>
-                    <polygon points="325,80 318,75 318,85" fill="#525252"/>
-                    <!-- Visual Features 표시 (회색 동그라미들) -->
-                    <circle cx="285" cy="35" r="5" fill="#737373"/>
-                    <circle cx="297" cy="35" r="5" fill="#737373"/>
-                    <circle cx="309" cy="35" r="5" fill="#737373"/>
-                    <circle cx="285" cy="48" r="5" fill="#737373"/>
-                    <circle cx="297" cy="48" r="5" fill="#737373"/>
-                    <circle cx="309" cy="48" r="5" fill="#737373"/>
-                    <text x="297" y="25" text-anchor="middle" fill="#737373" font-size="8">Visual Features</text>
-                    <line x1="297" y1="55" x2="297" y2="75" stroke="#525252" stroke-width="1" stroke-dasharray="3"/>
+                    <!-- Arrow to Projector -->
+                    <line x1="295" y1="62" x2="340" y2="62" stroke="#525252" stroke-width="2"/>
+                    <polygon points="345,62 338,57 338,67" fill="#525252"/>
+                    <text x="320" y="52" text-anchor="middle" fill="#737373" font-size="9">Visual Features</text>
                     
                     <!-- Projector (핵심!) -->
-                    <rect x="330" y="40" width="130" height="80" rx="6" fill="#00D4AA" fill-opacity="0.2" stroke="#00D4AA" stroke-width="2.5"/>
-                    <text x="395" y="70" text-anchor="middle" fill="#00D4AA" font-size="13" font-weight="700">Projector</text>
-                    <text x="395" y="90" text-anchor="middle" fill="#00D4AA" font-size="9">4종 비교 실험</text>
-                    <text x="395" y="108" text-anchor="middle" fill="#525252" font-size="8">↓ 다음 슬라이드</text>
+                    <rect x="350" y="20" width="140" height="85" rx="6" fill="#00D4AA" fill-opacity="0.2" stroke="#00D4AA" stroke-width="3"/>
+                    <text x="420" y="52" text-anchor="middle" fill="#00D4AA" font-size="14" font-weight="800">Projector</text>
+                    <text x="420" y="72" text-anchor="middle" fill="#00D4AA" font-size="10">4종 비교 실험</text>
+                    <rect x="360" y="82" width="60" height="14" rx="2" fill="#00D4AA"/>
+                    <text x="390" y="92" text-anchor="middle" fill="#0a0a0a" font-size="8" font-weight="700">TRAINABLE</text>
                     
-                    <!-- Arrow + Visual Tokens -->
-                    <line x1="465" y1="80" x2="510" y2="80" stroke="#525252" stroke-width="2"/>
-                    <polygon points="515,80 508,75 508,85" fill="#525252"/>
-                    <!-- Visual Tokens (노란색/주황색) -->
-                    <circle cx="475" cy="35" r="5" fill="#FFB366"/>
-                    <circle cx="487" cy="35" r="5" fill="#FFB366"/>
-                    <circle cx="499" cy="35" r="5" fill="#FFB366"/>
-                    <text x="487" y="25" text-anchor="middle" fill="#FFB366" font-size="8">Visual Tokens</text>
-                    <line x1="487" y1="42" x2="487" y2="75" stroke="#FFB366" stroke-width="1" stroke-dasharray="3"/>
+                    <!-- Arrow to Token Concat -->
+                    <line x1="495" y1="62" x2="540" y2="90" stroke="#FFB366" stroke-width="2"/>
+                    <polygon points="545,93 536,90 540,84" fill="#FFB366"/>
+                    <text x="505" y="52" text-anchor="middle" fill="#FFB366" font-size="10" font-weight="600">Visual Tokens</text>
+                    
+                    <!-- ========== 하단: 텍스트 파이프라인 ========== -->
+                    <!-- Text Instruction Input -->
+                    <rect x="20" y="135" width="90" height="65" rx="6" fill="#262626" stroke="#6495ED" stroke-width="2"/>
+                    <text x="65" y="160" text-anchor="middle" fill="#6495ED" font-size="10" font-weight="600">"이 영상을</text>
+                    <text x="65" y="175" text-anchor="middle" fill="#6495ED" font-size="10" font-weight="600">설명해줘"</text>
+                    <text x="65" y="210" text-anchor="middle" fill="#6495ED" font-size="11" font-weight="700">Text Instruction</text>
+                    
+                    <!-- Arrow to Tokenizer -->
+                    <line x1="115" y1="167" x2="150" y2="167" stroke="#6495ED" stroke-width="2"/>
+                    <polygon points="155,167 148,162 148,172" fill="#6495ED"/>
+                    
+                    <!-- Tokenizer -->
+                    <rect x="160" y="130" width="130" height="75" rx="6" fill="#6495ED" fill-opacity="0.15" stroke="#6495ED" stroke-width="2"/>
+                    <text x="225" y="160" text-anchor="middle" fill="#6495ED" font-size="12" font-weight="700">Tokenizer</text>
+                    <text x="225" y="180" text-anchor="middle" fill="#525252" font-size="10">Qwen Tokenizer</text>
+                    
+                    <!-- Arrow to Token Concat (from text) -->
+                    <line x1="295" y1="167" x2="540" y2="115" stroke="#6495ED" stroke-width="2"/>
+                    <polygon points="545,112 536,117 538,110" fill="#6495ED"/>
+                    <text x="400" y="155" text-anchor="middle" fill="#6495ED" font-size="10" font-weight="600">Text Tokens</text>
+                    
+                    <!-- ========== Token Concatenation 시각화 ========== -->
+                    <rect x="550" y="65" width="130" height="80" rx="6" fill="#262626" stroke="#a3a3a3" stroke-width="1" stroke-dasharray="4"/>
+                    <text x="615" y="85" text-anchor="middle" fill="#a3a3a3" font-size="9">Token Sequence</text>
+                    <!-- Visual Tokens -->
+                    <circle cx="570" cy="105" r="6" fill="#FFB366"/>
+                    <circle cx="586" cy="105" r="6" fill="#FFB366"/>
+                    <circle cx="602" cy="105" r="6" fill="#FFB366"/>
+                    <!-- Text Tokens -->
+                    <circle cx="622" cy="105" r="6" fill="#6495ED"/>
+                    <circle cx="638" cy="105" r="6" fill="#6495ED"/>
+                    <circle cx="654" cy="105" r="6" fill="#6495ED"/>
+                    <circle cx="670" cy="105" r="6" fill="#6495ED"/>
+                    <text x="615" y="130" text-anchor="middle" fill="#525252" font-size="8">[Visual] + [Text]</text>
+                    
+                    <!-- Arrow to LLM -->
+                    <line x1="685" y1="105" x2="710" y2="105" stroke="#90EE90" stroke-width="2"/>
+                    <polygon points="715,105 708,100 708,110" fill="#90EE90"/>
                     
                     <!-- LLM -->
-                    <rect x="520" y="35" width="200" height="90" rx="6" fill="#90EE90" fill-opacity="0.12" stroke="#90EE90" stroke-width="2"/>
-                    <text x="620" y="65" text-anchor="middle" fill="#90EE90" font-size="13" font-weight="700">Large Language Model</text>
-                    <text x="620" y="85" text-anchor="middle" fill="#90EE90" font-size="9">Qwen3-8B</text>
-                    <!-- LLM 입력 토큰 시각화 -->
-                    <circle cx="545" cy="105" r="4" fill="#FFB366"/>
-                    <circle cx="557" cy="105" r="4" fill="#FFB366"/>
-                    <circle cx="569" cy="105" r="4" fill="#FFB366"/>
-                    <circle cx="585" cy="105" r="4" fill="#6495ED"/>
-                    <circle cx="597" cy="105" r="4" fill="#6495ED"/>
-                    <circle cx="609" cy="105" r="4" fill="#6495ED"/>
-                    <circle cx="621" cy="105" r="4" fill="#6495ED"/>
-                    <text x="583" y="118" text-anchor="middle" fill="#525252" font-size="7">Visual + Text Tokens</text>
-                    
-                    <!-- Text Tokens 입력 (위에서) -->
-                    <circle cx="640" cy="20" r="4" fill="#6495ED"/>
-                    <circle cx="655" cy="20" r="4" fill="#6495ED"/>
-                    <circle cx="670" cy="20" r="4" fill="#6495ED"/>
-                    <circle cx="685" cy="20" r="4" fill="#6495ED"/>
-                    <text x="662" y="12" text-anchor="middle" fill="#6495ED" font-size="8">Text Tokens</text>
-                    <line x1="662" y1="27" x2="662" y2="35" stroke="#6495ED" stroke-width="1.5"/>
+                    <rect x="720" y="45" width="90" height="120" rx="6" fill="#90EE90" fill-opacity="0.15" stroke="#90EE90" stroke-width="2"/>
+                    <text x="765" y="85" text-anchor="middle" fill="#90EE90" font-size="12" font-weight="700">LLM</text>
+                    <text x="765" y="102" text-anchor="middle" fill="#90EE90" font-size="9">Qwen3-8B</text>
+                    <text x="765" y="125" text-anchor="middle" fill="#525252" font-size="8">Next Token</text>
+                    <text x="765" y="138" text-anchor="middle" fill="#525252" font-size="8">Prediction</text>
+                    <rect x="730" y="145" width="55" height="14" rx="2" fill="#ffd93d"/>
+                    <text x="757" y="155" text-anchor="middle" fill="#0a0a0a" font-size="7" font-weight="700">LoRA r=16</text>
                     
                     <!-- Arrow to Output -->
-                    <line x1="725" y1="80" x2="760" y2="80" stroke="#90EE90" stroke-width="2"/>
-                    <polygon points="765,80 758,75 758,85" fill="#90EE90"/>
+                    <line x1="815" y1="105" x2="840" y2="105" stroke="#90EE90" stroke-width="2"/>
+                    <polygon points="845,105 838,100 838,110" fill="#90EE90"/>
                     
                     <!-- Output -->
-                    <rect x="770" y="50" width="110" height="60" rx="6" fill="#262626" stroke="#90EE90" stroke-width="2"/>
-                    <text x="825" y="75" text-anchor="middle" fill="#90EE90" font-size="10" font-weight="600">한국어 캡션</text>
-                    <text x="825" y="92" text-anchor="middle" fill="#a3a3a3" font-size="8">"화면에는..."</text>
-                    
-                    <!-- 하단 레이블 -->
-                    <text x="60" y="145" text-anchor="middle" fill="#87CEEB" font-size="9">X<tspan baseline-shift="sub" font-size="7">v</tspan></text>
-                    <text x="210" y="145" text-anchor="middle" fill="#525252" font-size="8">Frozen 304M</text>
-                    <text x="395" y="145" text-anchor="middle" fill="#00D4AA" font-size="9" font-weight="600">핵심 실험</text>
-                    <text x="620" y="145" text-anchor="middle" fill="#525252" font-size="8">4-bit + LoRA</text>
+                    <rect x="850" y="70" width="45" height="70" rx="6" fill="#262626" stroke="#90EE90" stroke-width="2"/>
+                    <text x="872" y="100" text-anchor="middle" fill="#90EE90" font-size="10" font-weight="600">출력</text>
+                    <text x="872" y="118" text-anchor="middle" fill="#a3a3a3" font-size="8">캡션</text>
                 </svg>
             </div>
             
             <!-- 핵심 설명 -->
-            <div style="margin-top: 16px; padding: 14px 20px; background: var(--gray-900); border-left: 4px solid var(--accent);">
-                <div style="font-size: 12px; color: var(--gray-300); line-height: 1.6;">
+            <div style="margin-top: 14px; padding: 14px 20px; background: var(--gray-900); border-left: 4px solid var(--accent);">
+                <div style="font-size: 12px; color: var(--gray-300); line-height: 1.7;">
                     <span class="accent" style="font-weight: 700;">핵심</span> &nbsp; 
-                    Image → Vision Encoder → <span class="accent">Projector</span> → Visual Tokens + Text Tokens → LLM → 캡션<br>
-                    <span style="color: var(--gray-500);">LLM 입장에서는 Visual/Text 구분 없이 토큰 시퀀스만 보고 다음 토큰 예측</span>
+                    <span style="color: #87CEEB;">Image</span> → Vision Encoder → <span class="accent">Projector</span> → <span style="color: #FFB366;">Visual Tokens</span><br>
+                    <span style="color: #6495ED;">Text Instruction</span> → Tokenizer → <span style="color: #6495ED;">Text Tokens</span><br>
+                    <span style="color: var(--gray-500);">LLM은 [Visual + Text] 토큰 시퀀스를 받아 다음 토큰만 예측</span>
                 </div>
             </div>
         </section>
@@ -704,133 +715,161 @@
                 <h2>Video-LLaVA <span class="accent">Pipeline & 학습 전략</span></h2>
             </div>
             
-            <!-- 파이프라인 다이어그램 -->
-            <div style="padding: 16px; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 8px; margin-top: 12px;">
-                <svg width="100%" height="100" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet">
-                    <!-- Video Input -->
-                    <rect x="10" y="25" width="70" height="50" rx="4" fill="#262626" stroke="#87CEEB" stroke-width="2"/>
-                    <text x="45" y="55" text-anchor="middle" fill="#87CEEB" font-size="10" font-weight="600">Video</text>
-                    <text x="45" y="85" text-anchor="middle" fill="#525252" font-size="8">8 frames</text>
+            <!-- 파이프라인 다이어그램 - 인풋 2개 명시 -->
+            <div style="padding: 16px; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 8px; margin-top: 10px;">
+                <svg width="100%" height="130" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid meet">
+                    <!-- Video Input (상단) -->
+                    <rect x="10" y="10" width="70" height="45" rx="4" fill="#262626" stroke="#87CEEB" stroke-width="2"/>
+                    <text x="45" y="30" text-anchor="middle" fill="#87CEEB" font-size="10" font-weight="700">Video</text>
+                    <text x="45" y="44" text-anchor="middle" fill="#525252" font-size="8">8 frames</text>
                     
-                    <line x1="85" y1="50" x2="115" y2="50" stroke="#525252" stroke-width="2"/>
-                    <polygon points="120,50 113,45 113,55" fill="#525252"/>
+                    <!-- Text Input (하단) -->
+                    <rect x="10" y="70" width="70" height="45" rx="4" fill="#262626" stroke="#6495ED" stroke-width="2"/>
+                    <text x="45" y="88" text-anchor="middle" fill="#6495ED" font-size="9" font-weight="600">"설명해줘"</text>
+                    <text x="45" y="104" text-anchor="middle" fill="#525252" font-size="8">Instruction</text>
+                    
+                    <!-- Arrow from Video -->
+                    <line x1="85" y1="32" x2="115" y2="50" stroke="#87CEEB" stroke-width="2"/>
+                    <polygon points="120,52 111,52 114,45" fill="#87CEEB"/>
                     
                     <!-- Vision Encoder (Frozen) -->
-                    <rect x="125" y="20" width="120" height="60" rx="4" fill="#404040" fill-opacity="0.3" stroke="#737373" stroke-width="2"/>
-                    <text x="185" y="45" text-anchor="middle" fill="#a3a3a3" font-size="10" font-weight="600">Vision Encoder</text>
-                    <text x="185" y="60" text-anchor="middle" fill="#737373" font-size="8">CLIP (304M)</text>
-                    <rect x="130" y="68" width="50" height="14" rx="2" fill="#525252"/>
-                    <text x="155" y="78" text-anchor="middle" fill="#262626" font-size="7" font-weight="700">FROZEN</text>
+                    <rect x="125" y="20" width="110" height="55" rx="4" fill="#87CEEB" fill-opacity="0.15" stroke="#737373" stroke-width="2"/>
+                    <text x="180" y="42" text-anchor="middle" fill="#a3a3a3" font-size="10" font-weight="700">Vision Encoder</text>
+                    <text x="180" y="58" text-anchor="middle" fill="#525252" font-size="8">CLIP 304M</text>
+                    <rect x="130" y="62" width="45" height="12" rx="2" fill="#525252"/>
+                    <text x="152" y="71" text-anchor="middle" fill="#262626" font-size="7" font-weight="700">FROZEN</text>
                     
-                    <line x1="250" y1="50" x2="280" y2="50" stroke="#525252" stroke-width="2"/>
-                    <polygon points="285,50 278,45 278,55" fill="#525252"/>
+                    <line x1="240" y1="47" x2="270" y2="47" stroke="#525252" stroke-width="2"/>
+                    <polygon points="275,47 268,42 268,52" fill="#525252"/>
                     
                     <!-- Projector (Trainable) -->
-                    <rect x="290" y="20" width="130" height="60" rx="4" fill="#00D4AA" fill-opacity="0.25" stroke="#00D4AA" stroke-width="2.5"/>
-                    <text x="355" y="42" text-anchor="middle" fill="#00D4AA" font-size="11" font-weight="700">Projector</text>
-                    <text x="355" y="58" text-anchor="middle" fill="#525252" font-size="8">4종 비교 (4M~206M)</text>
-                    <rect x="295" y="68" width="60" height="14" rx="2" fill="#00D4AA"/>
-                    <text x="325" y="78" text-anchor="middle" fill="#0a0a0a" font-size="7" font-weight="700">TRAINABLE</text>
+                    <rect x="280" y="15" width="120" height="65" rx="4" fill="#00D4AA" fill-opacity="0.25" stroke="#00D4AA" stroke-width="2.5"/>
+                    <text x="340" y="38" text-anchor="middle" fill="#00D4AA" font-size="12" font-weight="800">Projector</text>
+                    <text x="340" y="55" text-anchor="middle" fill="#00D4AA" font-size="9">4M~206M</text>
+                    <rect x="285" y="62" width="55" height="12" rx="2" fill="#00D4AA"/>
+                    <text x="312" y="71" text-anchor="middle" fill="#0a0a0a" font-size="7" font-weight="700">TRAINABLE</text>
                     
-                    <line x1="425" y1="50" x2="455" y2="50" stroke="#525252" stroke-width="2"/>
-                    <polygon points="460,50 453,45 453,55" fill="#525252"/>
+                    <!-- Token Concat 영역 -->
+                    <line x1="405" y1="47" x2="460" y2="47" stroke="#FFB366" stroke-width="2"/>
+                    <polygon points="465,47 458,42 458,52" fill="#FFB366"/>
+                    <text x="433" y="38" text-anchor="middle" fill="#FFB366" font-size="8">Visual Tok</text>
+                    
+                    <!-- Arrow from Text to Token area -->
+                    <line x1="85" y1="92" x2="460" y2="70" stroke="#6495ED" stroke-width="2"/>
+                    <polygon points="465,68 456,72 458,65" fill="#6495ED"/>
+                    <text x="280" y="95" text-anchor="middle" fill="#6495ED" font-size="8">Text Tokens</text>
+                    
+                    <!-- Token Concat Box -->
+                    <rect x="470" y="30" width="80" height="55" rx="4" fill="#262626" stroke="#a3a3a3" stroke-width="1" stroke-dasharray="3"/>
+                    <!-- Visual Tokens -->
+                    <circle cx="490" cy="50" r="5" fill="#FFB366"/>
+                    <circle cx="505" cy="50" r="5" fill="#FFB366"/>
+                    <circle cx="520" cy="50" r="5" fill="#FFB366"/>
+                    <!-- Text Tokens -->
+                    <circle cx="490" cy="68" r="5" fill="#6495ED"/>
+                    <circle cx="505" cy="68" r="5" fill="#6495ED"/>
+                    <circle cx="520" cy="68" r="5" fill="#6495ED"/>
+                    <circle cx="535" cy="68" r="5" fill="#6495ED"/>
+                    
+                    <line x1="555" y1="57" x2="585" y2="57" stroke="#525252" stroke-width="2"/>
+                    <polygon points="590,57 583,52 583,62" fill="#525252"/>
                     
                     <!-- LLM (LoRA) -->
-                    <rect x="465" y="20" width="140" height="60" rx="4" fill="#90EE90" fill-opacity="0.15" stroke="#90EE90" stroke-width="2"/>
-                    <text x="535" y="42" text-anchor="middle" fill="#90EE90" font-size="11" font-weight="700">LLM (Qwen3-8B)</text>
-                    <text x="535" y="58" text-anchor="middle" fill="#525252" font-size="8">4-bit Quantized</text>
-                    <rect x="470" y="68" width="55" height="14" rx="2" fill="#ffd93d"/>
-                    <text x="497" y="78" text-anchor="middle" fill="#0a0a0a" font-size="7" font-weight="700">LoRA r=16</text>
+                    <rect x="595" y="20" width="130" height="65" rx="4" fill="#90EE90" fill-opacity="0.15" stroke="#90EE90" stroke-width="2"/>
+                    <text x="660" y="42" text-anchor="middle" fill="#90EE90" font-size="11" font-weight="700">LLM (Qwen3-8B)</text>
+                    <text x="660" y="58" text-anchor="middle" fill="#525252" font-size="8">Next Token Predict</text>
+                    <rect x="600" y="65" width="50" height="12" rx="2" fill="#ffd93d"/>
+                    <text x="625" y="74" text-anchor="middle" fill="#0a0a0a" font-size="7" font-weight="700">LoRA r=16</text>
                     
-                    <line x1="610" y1="50" x2="640" y2="50" stroke="#525252" stroke-width="2"/>
-                    <polygon points="645,50 638,45 638,55" fill="#525252"/>
+                    <line x1="730" y1="52" x2="760" y2="52" stroke="#90EE90" stroke-width="2"/>
+                    <polygon points="765,52 758,47 758,57" fill="#90EE90"/>
                     
                     <!-- Output -->
-                    <rect x="650" y="25" width="110" height="50" rx="4" fill="#262626" stroke="#90EE90" stroke-width="2"/>
-                    <text x="705" y="48" text-anchor="middle" fill="#90EE90" font-size="10" font-weight="600">한국어 캡션</text>
-                    <text x="705" y="62" text-anchor="middle" fill="#525252" font-size="8">max 768 tok</text>
+                    <rect x="770" y="25" width="100" height="55" rx="4" fill="#262626" stroke="#90EE90" stroke-width="2"/>
+                    <text x="820" y="48" text-anchor="middle" fill="#90EE90" font-size="11" font-weight="700">한국어 캡션</text>
+                    <text x="820" y="65" text-anchor="middle" fill="#525252" font-size="8">max 768 tok</text>
                 </svg>
             </div>
             
             <!-- 2-Stage Training 시각화 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px;">
                 <!-- Stage 1 -->
-                <div style="padding: 16px; background: var(--gray-900); border: 2px solid var(--accent); border-radius: 8px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                <div style="padding: 14px; background: var(--gray-900); border: 2px solid var(--accent); border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
                         <span style="padding: 4px 10px; background: var(--accent); color: var(--black); font-size: 10px; font-weight: 700; border-radius: 4px;">Stage 1</span>
                         <span style="font-size: 12px; font-weight: 700; color: var(--white);">Projector Alignment</span>
                     </div>
-                    <div style="padding: 12px; background: var(--gray-800); border-radius: 6px;">
-                        <svg width="100%" height="60" viewBox="0 0 350 60">
+                    <div style="padding: 10px; background: var(--gray-800); border-radius: 6px;">
+                        <svg width="100%" height="50" viewBox="0 0 350 50">
                             <!-- Vision Encoder (Frozen) -->
-                            <rect x="10" y="15" width="70" height="35" rx="3" fill="#404040" fill-opacity="0.3" stroke="#525252" stroke-width="1.5"/>
-                            <text x="45" y="32" text-anchor="middle" fill="#737373" font-size="8">Vision</text>
-                            <text x="45" y="44" text-anchor="middle" fill="#525252" font-size="6">🔒 Frozen</text>
+                            <rect x="10" y="10" width="70" height="35" rx="3" fill="#404040" fill-opacity="0.3" stroke="#525252" stroke-width="1.5"/>
+                            <text x="45" y="25" text-anchor="middle" fill="#737373" font-size="9" font-weight="600">Vision</text>
+                            <text x="45" y="38" text-anchor="middle" fill="#525252" font-size="7">🔒 Frozen</text>
                             
-                            <line x1="85" y1="32" x2="105" y2="32" stroke="#404040" stroke-width="1.5"/>
-                            <polygon points="110,32 103,28 103,36" fill="#404040"/>
+                            <line x1="85" y1="27" x2="105" y2="27" stroke="#404040" stroke-width="1.5"/>
+                            <polygon points="110,27 103,23 103,31" fill="#404040"/>
                             
                             <!-- Projector (Training!) -->
-                            <rect x="115" y="10" width="80" height="45" rx="3" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="2"/>
-                            <text x="155" y="28" text-anchor="middle" fill="#00D4AA" font-size="9" font-weight="700">Projector</text>
-                            <text x="155" y="42" text-anchor="middle" fill="#00D4AA" font-size="7">🔥 Training</text>
+                            <rect x="115" y="5" width="80" height="42" rx="3" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="2"/>
+                            <text x="155" y="22" text-anchor="middle" fill="#00D4AA" font-size="10" font-weight="700">Projector</text>
+                            <text x="155" y="36" text-anchor="middle" fill="#00D4AA" font-size="8">🔥 Training</text>
                             
-                            <line x1="200" y1="32" x2="220" y2="32" stroke="#404040" stroke-width="1.5"/>
-                            <polygon points="225,32 218,28 218,36" fill="#404040"/>
+                            <line x1="200" y1="27" x2="220" y2="27" stroke="#404040" stroke-width="1.5"/>
+                            <polygon points="225,27 218,23 218,31" fill="#404040"/>
                             
                             <!-- LLM (Frozen) -->
-                            <rect x="230" y="15" width="80" height="35" rx="3" fill="#404040" fill-opacity="0.3" stroke="#525252" stroke-width="1.5"/>
-                            <text x="270" y="32" text-anchor="middle" fill="#737373" font-size="8">LLM</text>
-                            <text x="270" y="44" text-anchor="middle" fill="#525252" font-size="6">🔒 Frozen</text>
+                            <rect x="230" y="10" width="80" height="35" rx="3" fill="#404040" fill-opacity="0.3" stroke="#525252" stroke-width="1.5"/>
+                            <text x="270" y="25" text-anchor="middle" fill="#737373" font-size="9" font-weight="600">LLM</text>
+                            <text x="270" y="38" text-anchor="middle" fill="#525252" font-size="7">🔒 Frozen</text>
                         </svg>
                     </div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 10px; color: var(--gray-400);">
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: var(--gray-400);">
                         <span>LR: <span class="accent">1e-3</span></span>
                         <span>Epoch: <span class="accent">2</span></span>
-                        <span>목표: 모달리티 정렬</span>
+                        <span>모달리티 정렬</span>
                     </div>
                 </div>
                 
                 <!-- Stage 2 -->
-                <div style="padding: 16px; background: var(--gray-900); border: 2px solid #ffd93d; border-radius: 8px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                <div style="padding: 14px; background: var(--gray-900); border: 2px solid #ffd93d; border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
                         <span style="padding: 4px 10px; background: #ffd93d; color: var(--black); font-size: 10px; font-weight: 700; border-radius: 4px;">Stage 2</span>
                         <span style="font-size: 12px; font-weight: 700; color: var(--white);">End-to-End Fine-tuning</span>
                     </div>
-                    <div style="padding: 12px; background: var(--gray-800); border-radius: 6px;">
-                        <svg width="100%" height="60" viewBox="0 0 350 60">
+                    <div style="padding: 10px; background: var(--gray-800); border-radius: 6px;">
+                        <svg width="100%" height="50" viewBox="0 0 350 50">
                             <!-- Vision Encoder (Frozen) -->
-                            <rect x="10" y="15" width="70" height="35" rx="3" fill="#404040" fill-opacity="0.3" stroke="#525252" stroke-width="1.5"/>
-                            <text x="45" y="32" text-anchor="middle" fill="#737373" font-size="8">Vision</text>
-                            <text x="45" y="44" text-anchor="middle" fill="#525252" font-size="6">🔒 Frozen</text>
+                            <rect x="10" y="10" width="70" height="35" rx="3" fill="#404040" fill-opacity="0.3" stroke="#525252" stroke-width="1.5"/>
+                            <text x="45" y="25" text-anchor="middle" fill="#737373" font-size="9" font-weight="600">Vision</text>
+                            <text x="45" y="38" text-anchor="middle" fill="#525252" font-size="7">🔒 Frozen</text>
                             
-                            <line x1="85" y1="32" x2="105" y2="32" stroke="#404040" stroke-width="1.5"/>
-                            <polygon points="110,32 103,28 103,36" fill="#404040"/>
+                            <line x1="85" y1="27" x2="105" y2="27" stroke="#404040" stroke-width="1.5"/>
+                            <polygon points="110,27 103,23 103,31" fill="#404040"/>
                             
                             <!-- Projector (Training!) -->
-                            <rect x="115" y="10" width="80" height="45" rx="3" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="2"/>
-                            <text x="155" y="28" text-anchor="middle" fill="#00D4AA" font-size="9" font-weight="700">Projector</text>
-                            <text x="155" y="42" text-anchor="middle" fill="#00D4AA" font-size="7">🔥 Training</text>
+                            <rect x="115" y="5" width="80" height="42" rx="3" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="2"/>
+                            <text x="155" y="22" text-anchor="middle" fill="#00D4AA" font-size="10" font-weight="700">Projector</text>
+                            <text x="155" y="36" text-anchor="middle" fill="#00D4AA" font-size="8">🔥 Training</text>
                             
-                            <line x1="200" y1="32" x2="220" y2="32" stroke="#404040" stroke-width="1.5"/>
-                            <polygon points="225,32 218,28 218,36" fill="#404040"/>
+                            <line x1="200" y1="27" x2="220" y2="27" stroke="#404040" stroke-width="1.5"/>
+                            <polygon points="225,27 218,23 218,31" fill="#404040"/>
                             
                             <!-- LLM (LoRA Training!) -->
-                            <rect x="230" y="10" width="80" height="45" rx="3" fill="#ffd93d" fill-opacity="0.2" stroke="#ffd93d" stroke-width="2"/>
-                            <text x="270" y="28" text-anchor="middle" fill="#ffd93d" font-size="9" font-weight="700">LLM+LoRA</text>
-                            <text x="270" y="42" text-anchor="middle" fill="#ffd93d" font-size="7">🔥 Training</text>
+                            <rect x="230" y="5" width="80" height="42" rx="3" fill="#ffd93d" fill-opacity="0.2" stroke="#ffd93d" stroke-width="2"/>
+                            <text x="270" y="22" text-anchor="middle" fill="#ffd93d" font-size="10" font-weight="700">LLM+LoRA</text>
+                            <text x="270" y="36" text-anchor="middle" fill="#ffd93d" font-size="8">🔥 Training</text>
                         </svg>
                     </div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 10px; color: var(--gray-400);">
+                    <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: var(--gray-400);">
                         <span>LR: <span style="color: #ffd93d;">5e-5</span></span>
                         <span>Epoch: <span style="color: #ffd93d;">3</span></span>
-                        <span>목표: 태스크 학습</span>
+                        <span>태스크 학습</span>
                     </div>
                 </div>
             </div>
             
-            <div style="margin-top: 12px; padding: 12px 20px; background: var(--gray-900); border-left: 4px solid var(--accent);">
-                <div style="font-size: 11px; color: var(--gray-300);"><span class="accent" style="font-weight: 700;">핵심</span> &nbsp; Vision Encoder는 항상 Frozen → Stage 1에서 Projector만 학습 → Stage 2에서 Projector + LLM LoRA 함께 학습</div>
+            <div style="margin-top: 10px; padding: 10px 16px; background: var(--gray-900); border-left: 4px solid var(--accent);">
+                <div style="font-size: 11px; color: var(--gray-300);"><span class="accent" style="font-weight: 700;">핵심</span> &nbsp; Vision Encoder 항상 Frozen → Stage 1: Projector만 → Stage 2: Projector + LLM LoRA 함께</div>
             </div>
         </section>
     </div>
@@ -924,307 +963,277 @@
                 <h2>Projector <span class="accent">상세 구조</span></h2>
             </div>
             
-            <!-- 상단: 전체 아키텍처 파이프라인 -->
-            <div style="padding: 16px; background: var(--gray-900); border: 1px solid var(--gray-800); margin-top: 10px;">
-                <svg width="100%" height="80" viewBox="0 0 900 80" preserveAspectRatio="xMidYMid meet">
+            <!-- 상단: 전체 아키텍처 파이프라인 - 인풋 2개 명시 -->
+            <div style="padding: 12px; background: var(--gray-900); border: 1px solid var(--gray-800); margin-top: 8px;">
+                <svg width="100%" height="90" viewBox="0 0 900 90" preserveAspectRatio="xMidYMid meet">
                     <!-- Image Input -->
-                    <rect x="20" y="20" width="70" height="45" rx="4" fill="#262626" stroke="#87CEEB" stroke-width="2"/>
-                    <text x="55" y="47" text-anchor="middle" fill="#87CEEB" font-size="10" font-weight="600">Image</text>
+                    <rect x="10" y="8" width="65" height="40" rx="4" fill="#262626" stroke="#87CEEB" stroke-width="2"/>
+                    <text x="42" y="32" text-anchor="middle" fill="#87CEEB" font-size="10" font-weight="700">Image</text>
                     
-                    <!-- Arrow -->
-                    <line x1="95" y1="42" x2="130" y2="42" stroke="#525252" stroke-width="2"/>
-                    <polygon points="135,42 128,37 128,47" fill="#525252"/>
+                    <!-- Text Input -->
+                    <rect x="10" y="55" width="65" height="30" rx="4" fill="#262626" stroke="#6495ED" stroke-width="2"/>
+                    <text x="42" y="75" text-anchor="middle" fill="#6495ED" font-size="9" font-weight="600">Text</text>
+                    
+                    <!-- Arrow from Image -->
+                    <line x1="80" y1="28" x2="110" y2="40" stroke="#87CEEB" stroke-width="2"/>
+                    <polygon points="115,42 106,42 109,36" fill="#87CEEB"/>
                     
                     <!-- Vision Encoder -->
-                    <rect x="140" y="15" width="120" height="55" rx="4" fill="#87CEEB" fill-opacity="0.15" stroke="#87CEEB" stroke-width="2"/>
-                    <text x="200" y="38" text-anchor="middle" fill="#87CEEB" font-size="11" font-weight="600">Vision Encoder</text>
-                    <text x="200" y="55" text-anchor="middle" fill="#525252" font-size="9">CLIP ViT</text>
+                    <rect x="120" y="15" width="100" height="50" rx="4" fill="#87CEEB" fill-opacity="0.15" stroke="#87CEEB" stroke-width="2"/>
+                    <text x="170" y="38" text-anchor="middle" fill="#87CEEB" font-size="11" font-weight="700">Vision Encoder</text>
+                    <text x="170" y="52" text-anchor="middle" fill="#525252" font-size="8">CLIP ViT</text>
                     
-                    <!-- Arrow with Visual Features -->
-                    <line x1="265" y1="42" x2="310" y2="42" stroke="#525252" stroke-width="2"/>
-                    <polygon points="315,42 308,37 308,47" fill="#525252"/>
-                    <!-- Visual Features dots -->
-                    <circle cx="280" cy="25" r="4" fill="#87CEEB" opacity="0.5"/>
-                    <circle cx="290" cy="25" r="4" fill="#87CEEB" opacity="0.5"/>
-                    <circle cx="300" cy="25" r="4" fill="#87CEEB" opacity="0.5"/>
-                    <text x="290" y="15" text-anchor="middle" fill="#737373" font-size="8">Visual Features</text>
+                    <line x1="225" y1="40" x2="265" y2="40" stroke="#525252" stroke-width="2"/>
+                    <polygon points="270,40 263,35 263,45" fill="#525252"/>
                     
                     <!-- Projector (핵심 부분 강조) -->
-                    <rect x="320" y="10" width="140" height="65" rx="4" fill="#00D4AA" fill-opacity="0.2" stroke="#00D4AA" stroke-width="2.5"/>
-                    <text x="390" y="35" text-anchor="middle" fill="#00D4AA" font-size="12" font-weight="700">Projector</text>
-                    <text x="390" y="52" text-anchor="middle" fill="#00D4AA" font-size="9">4종 비교 실험</text>
-                    <text x="390" y="68" text-anchor="middle" fill="#525252" font-size="8">↓ 상세 구조</text>
+                    <rect x="275" y="10" width="130" height="60" rx="4" fill="#00D4AA" fill-opacity="0.2" stroke="#00D4AA" stroke-width="3"/>
+                    <text x="340" y="35" text-anchor="middle" fill="#00D4AA" font-size="13" font-weight="800">Projector</text>
+                    <text x="340" y="52" text-anchor="middle" fill="#00D4AA" font-size="9">4종 비교 ↓</text>
                     
-                    <!-- Arrow with Visual Tokens -->
-                    <line x1="465" y1="42" x2="510" y2="42" stroke="#525252" stroke-width="2"/>
-                    <polygon points="515,42 508,37 508,47" fill="#525252"/>
-                    <!-- Visual Tokens dots (yellow/orange) -->
-                    <circle cx="480" cy="25" r="4" fill="#FFB366"/>
-                    <circle cx="490" cy="25" r="4" fill="#FFB366"/>
-                    <circle cx="500" cy="25" r="4" fill="#FFB366"/>
-                    <text x="490" y="15" text-anchor="middle" fill="#737373" font-size="8">Visual Tokens</text>
+                    <!-- Token Concat 영역 -->
+                    <line x1="410" y1="40" x2="470" y2="40" stroke="#FFB366" stroke-width="2"/>
+                    <polygon points="475,40 468,35 468,45" fill="#FFB366"/>
+                    
+                    <!-- Arrow from Text -->
+                    <line x1="80" y1="70" x2="470" y2="55" stroke="#6495ED" stroke-width="2"/>
+                    <polygon points="475,53 466,58 467,51" fill="#6495ED"/>
+                    
+                    <!-- Token Box -->
+                    <rect x="480" y="20" width="80" height="50" rx="4" fill="#262626" stroke="#a3a3a3" stroke-width="1" stroke-dasharray="3"/>
+                    <circle cx="500" cy="38" r="5" fill="#FFB366"/>
+                    <circle cx="515" cy="38" r="5" fill="#FFB366"/>
+                    <circle cx="530" cy="38" r="5" fill="#FFB366"/>
+                    <circle cx="500" cy="55" r="5" fill="#6495ED"/>
+                    <circle cx="515" cy="55" r="5" fill="#6495ED"/>
+                    <circle cx="530" cy="55" r="5" fill="#6495ED"/>
+                    <circle cx="545" cy="55" r="5" fill="#6495ED"/>
+                    
+                    <line x1="565" y1="45" x2="595" y2="45" stroke="#525252" stroke-width="2"/>
+                    <polygon points="600,45 593,40 593,50" fill="#525252"/>
                     
                     <!-- LLM -->
-                    <rect x="520" y="15" width="200" height="55" rx="4" fill="#90EE90" fill-opacity="0.15" stroke="#90EE90" stroke-width="2"/>
-                    <text x="620" y="35" text-anchor="middle" fill="#90EE90" font-size="11" font-weight="600">Large Language Model</text>
-                    <text x="620" y="52" text-anchor="middle" fill="#525252" font-size="9">Qwen3-8B</text>
+                    <rect x="605" y="15" width="120" height="55" rx="4" fill="#90EE90" fill-opacity="0.15" stroke="#90EE90" stroke-width="2"/>
+                    <text x="665" y="38" text-anchor="middle" fill="#90EE90" font-size="12" font-weight="700">LLM</text>
+                    <text x="665" y="55" text-anchor="middle" fill="#525252" font-size="9">Next Token</text>
                     
-                    <!-- Text Tokens input -->
-                    <circle cx="560" cy="5" r="4" fill="#6495ED"/>
-                    <circle cx="575" cy="5" r="4" fill="#6495ED"/>
-                    <circle cx="590" cy="5" r="4" fill="#6495ED"/>
-                    <text x="575" y="-3" text-anchor="middle" fill="#737373" font-size="8">Text Tokens</text>
-                    <line x1="575" y1="10" x2="575" y2="15" stroke="#6495ED" stroke-width="1.5"/>
-                    
-                    <!-- Arrow to output -->
-                    <line x1="725" y1="42" x2="760" y2="42" stroke="#525252" stroke-width="2"/>
-                    <polygon points="765,42 758,37 758,47" fill="#525252"/>
+                    <line x1="730" y1="42" x2="760" y2="42" stroke="#90EE90" stroke-width="2"/>
+                    <polygon points="765,42 758,37 758,47" fill="#90EE90"/>
                     
                     <!-- Output -->
-                    <rect x="770" y="20" width="100" height="45" rx="4" fill="#262626" stroke="#90EE90" stroke-width="2"/>
-                    <text x="820" y="47" text-anchor="middle" fill="#90EE90" font-size="10" font-weight="600">한국어 캡션</text>
+                    <rect x="770" y="20" width="80" height="45" rx="4" fill="#262626" stroke="#90EE90" stroke-width="2"/>
+                    <text x="810" y="47" text-anchor="middle" fill="#90EE90" font-size="10" font-weight="700">캡션</text>
                 </svg>
             </div>
             
-            <!-- 하단: 4종 Projector 상세 비교 (어두운 테마) -->
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px;">
+            <!-- 하단: 4종 Projector 상세 비교 - 직관적인 도식 -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 12px;">
                 
                 <!-- (a) Linear Projector - 권장 -->
-                <div style="padding: 16px; background: var(--gray-900); border: 2px solid var(--accent); border-radius: 8px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div style="padding: 14px; background: var(--gray-900); border: 2px solid var(--accent); border-radius: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <div>
-                            <div style="font-size: 11px; font-weight: 700; color: var(--white);">Linear</div>
-                            <div style="font-size: 9px; color: var(--gray-500);">LLaVA</div>
+                            <div style="font-size: 13px; font-weight: 800; color: var(--white);">Linear</div>
+                            <div style="font-size: 10px; color: var(--gray-500);">LLaVA</div>
                         </div>
                         <div style="text-align: right;">
-                            <div style="font-size: 16px; font-weight: 900; color: var(--accent);">4M</div>
-                            <span class="tag tag-green" style="font-size: 8px;">권장</span>
+                            <div style="font-size: 18px; font-weight: 900; color: var(--accent);">4M</div>
+                            <span class="tag tag-green" style="font-size: 9px;">권장</span>
                         </div>
                     </div>
-                    <!-- 시각화 -->
-                    <div style="padding: 12px; background: var(--gray-800); border-radius: 6px; margin-bottom: 12px;">
-                        <svg width="100%" height="60" viewBox="0 0 160 60">
-                            <!-- Input tokens -->
-                            <circle cx="20" cy="15" r="4" fill="#737373"/>
-                            <circle cx="32" cy="15" r="4" fill="#737373"/>
-                            <circle cx="44" cy="15" r="4" fill="#737373"/>
-                            <circle cx="20" cy="30" r="4" fill="#737373"/>
-                            <circle cx="32" cy="30" r="4" fill="#737373"/>
-                            <circle cx="44" cy="30" r="4" fill="#737373"/>
-                            <circle cx="20" cy="45" r="4" fill="#737373"/>
-                            <circle cx="32" cy="45" r="4" fill="#737373"/>
-                            <circle cx="44" cy="45" r="4" fill="#737373"/>
-                            <!-- Linear box -->
-                            <rect x="58" y="8" width="28" height="44" rx="4" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="1.5"/>
-                            <text x="72" y="33" text-anchor="middle" fill="#00D4AA" font-size="8" font-weight="600">W</text>
-                            <!-- Output tokens (same count) -->
-                            <circle cx="105" cy="15" r="4" fill="#00D4AA"/>
-                            <circle cx="117" cy="15" r="4" fill="#00D4AA"/>
-                            <circle cx="129" cy="15" r="4" fill="#00D4AA"/>
-                            <circle cx="105" cy="30" r="4" fill="#00D4AA"/>
-                            <circle cx="117" cy="30" r="4" fill="#00D4AA"/>
-                            <circle cx="129" cy="30" r="4" fill="#00D4AA"/>
-                            <circle cx="105" cy="45" r="4" fill="#00D4AA"/>
-                            <circle cx="117" cy="45" r="4" fill="#00D4AA"/>
-                            <circle cx="129" cy="45" r="4" fill="#00D4AA"/>
-                            <!-- Arrow -->
-                            <line x1="88" y1="30" x2="98" y2="30" stroke="#525252" stroke-width="1.5"/>
-                            <polygon points="100,30 95,27 95,33" fill="#525252"/>
+                    <!-- 직관적 시각화: 토큰 수 유지 -->
+                    <div style="padding: 14px; background: var(--gray-800); border-radius: 6px; margin-bottom: 10px;">
+                        <svg width="100%" height="55" viewBox="0 0 150 55">
+                            <!-- 입력 토큰 (많음) -->
+                            <circle cx="15" cy="15" r="5" fill="#737373"/>
+                            <circle cx="30" cy="15" r="5" fill="#737373"/>
+                            <circle cx="45" cy="15" r="5" fill="#737373"/>
+                            <circle cx="15" cy="30" r="5" fill="#737373"/>
+                            <circle cx="30" cy="30" r="5" fill="#737373"/>
+                            <circle cx="45" cy="30" r="5" fill="#737373"/>
+                            <circle cx="15" cy="45" r="5" fill="#737373"/>
+                            <circle cx="30" cy="45" r="5" fill="#737373"/>
+                            <circle cx="45" cy="45" r="5" fill="#737373"/>
+                            <!-- Linear 변환 -->
+                            <rect x="58" y="10" width="25" height="40" rx="4" fill="#00D4AA" fill-opacity="0.4" stroke="#00D4AA" stroke-width="2"/>
+                            <text x="70" y="34" text-anchor="middle" fill="#00D4AA" font-size="11" font-weight="700">W</text>
+                            <!-- 출력 토큰 (같은 수) -->
+                            <line x1="86" y1="30" x2="96" y2="30" stroke="#00D4AA" stroke-width="2"/>
+                            <polygon points="100,30 94,26 94,34" fill="#00D4AA"/>
+                            <circle cx="110" cy="15" r="5" fill="#00D4AA"/>
+                            <circle cx="125" cy="15" r="5" fill="#00D4AA"/>
+                            <circle cx="140" cy="15" r="5" fill="#00D4AA"/>
+                            <circle cx="110" cy="30" r="5" fill="#00D4AA"/>
+                            <circle cx="125" cy="30" r="5" fill="#00D4AA"/>
+                            <circle cx="140" cy="30" r="5" fill="#00D4AA"/>
+                            <circle cx="110" cy="45" r="5" fill="#00D4AA"/>
+                            <circle cx="125" cy="45" r="5" fill="#00D4AA"/>
+                            <circle cx="140" cy="45" r="5" fill="#00D4AA"/>
                         </svg>
                     </div>
-                    <div style="font-size: 9px; color: var(--gray-400); margin-bottom: 8px;">
-                        <div style="margin-bottom: 4px;"><span style="color: var(--red);">✗</span> Flexibility</div>
-                        <div><span style="color: var(--accent);">✓</span> <span style="color: var(--accent); font-weight: 600;">Locality 보존</span></div>
-                    </div>
-                    <div style="padding: 8px; background: var(--accent); background: rgba(0,212,170,0.15); border-radius: 4px; text-align: center;">
-                        <span style="font-size: 9px; color: var(--accent); font-weight: 600;">4608 → 4608 tokens</span>
+                    <div style="text-align: center; padding: 8px; background: rgba(0,212,170,0.15); border-radius: 4px;">
+                        <div style="font-size: 12px; color: var(--accent); font-weight: 700;">4608 → 4608</div>
+                        <div style="font-size: 9px; color: var(--gray-500);">토큰 수 유지</div>
                     </div>
                 </div>
                 
                 <!-- (b) MLP Projector - 권장 -->
-                <div style="padding: 16px; background: var(--gray-900); border: 2px solid var(--accent); border-radius: 8px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div style="padding: 14px; background: var(--gray-900); border: 2px solid var(--accent); border-radius: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <div>
-                            <div style="font-size: 11px; font-weight: 700; color: var(--white);">MLP (2-Layer)</div>
-                            <div style="font-size: 9px; color: var(--gray-500);">LLaVA-1.5</div>
+                            <div style="font-size: 13px; font-weight: 800; color: var(--white);">MLP</div>
+                            <div style="font-size: 10px; color: var(--gray-500);">LLaVA-1.5</div>
                         </div>
                         <div style="text-align: right;">
-                            <div style="font-size: 16px; font-weight: 900; color: var(--accent);">8M</div>
-                            <span class="tag tag-green" style="font-size: 8px;">권장</span>
+                            <div style="font-size: 18px; font-weight: 900; color: var(--accent);">8M</div>
+                            <span class="tag tag-green" style="font-size: 9px;">권장</span>
                         </div>
                     </div>
-                    <!-- 시각화 -->
-                    <div style="padding: 12px; background: var(--gray-800); border-radius: 6px; margin-bottom: 12px;">
-                        <svg width="100%" height="60" viewBox="0 0 180 60">
-                            <!-- Input -->
-                            <circle cx="15" cy="20" r="3" fill="#737373"/>
-                            <circle cx="15" cy="32" r="3" fill="#737373"/>
-                            <circle cx="15" cy="44" r="3" fill="#737373"/>
-                            <!-- Linear 1 -->
-                            <rect x="28" y="12" width="22" height="40" rx="3" fill="#00D4AA" fill-opacity="0.2" stroke="#00D4AA" stroke-width="1"/>
-                            <text x="39" y="35" text-anchor="middle" fill="#00D4AA" font-size="7">L1</text>
+                    <!-- 직관적 시각화: 2개 레이어 -->
+                    <div style="padding: 14px; background: var(--gray-800); border-radius: 6px; margin-bottom: 10px;">
+                        <svg width="100%" height="55" viewBox="0 0 150 55">
+                            <!-- 입력 -->
+                            <circle cx="10" cy="20" r="4" fill="#737373"/>
+                            <circle cx="10" cy="35" r="4" fill="#737373"/>
+                            <!-- Layer 1 -->
+                            <rect x="25" y="10" width="30" height="40" rx="4" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="1.5"/>
+                            <text x="40" y="34" text-anchor="middle" fill="#00D4AA" font-size="10" font-weight="700">L1</text>
                             <!-- GELU -->
-                            <rect x="58" y="12" width="22" height="40" rx="3" fill="#ffd93d" fill-opacity="0.2" stroke="#ffd93d" stroke-width="1"/>
-                            <text x="69" y="35" text-anchor="middle" fill="#ffd93d" font-size="6">GELU</text>
-                            <!-- Linear 2 -->
-                            <rect x="88" y="12" width="22" height="40" rx="3" fill="#00D4AA" fill-opacity="0.2" stroke="#00D4AA" stroke-width="1"/>
-                            <text x="99" y="35" text-anchor="middle" fill="#00D4AA" font-size="7">L2</text>
-                            <!-- Output -->
-                            <circle cx="130" cy="20" r="3" fill="#00D4AA"/>
-                            <circle cx="130" cy="32" r="3" fill="#00D4AA"/>
-                            <circle cx="130" cy="44" r="3" fill="#00D4AA"/>
-                            <!-- Arrows -->
-                            <line x1="112" y1="32" x2="124" y2="32" stroke="#525252" stroke-width="1"/>
-                            <polygon points="126,32 121,29 121,35" fill="#525252"/>
+                            <rect x="60" y="15" width="25" height="30" rx="4" fill="#ffd93d" fill-opacity="0.3" stroke="#ffd93d" stroke-width="1.5"/>
+                            <text x="72" y="34" text-anchor="middle" fill="#ffd93d" font-size="8" font-weight="600">σ</text>
+                            <!-- Layer 2 -->
+                            <rect x="90" y="10" width="30" height="40" rx="4" fill="#00D4AA" fill-opacity="0.3" stroke="#00D4AA" stroke-width="1.5"/>
+                            <text x="105" y="34" text-anchor="middle" fill="#00D4AA" font-size="10" font-weight="700">L2</text>
+                            <!-- 출력 -->
+                            <line x1="122" y1="30" x2="132" y2="30" stroke="#00D4AA" stroke-width="2"/>
+                            <polygon points="136,30 130,26 130,34" fill="#00D4AA"/>
+                            <circle cx="145" cy="20" r="4" fill="#00D4AA"/>
+                            <circle cx="145" cy="35" r="4" fill="#00D4AA"/>
                         </svg>
                     </div>
-                    <div style="font-size: 9px; color: var(--gray-400); margin-bottom: 8px;">
-                        <div style="margin-bottom: 4px;"><span style="color: var(--red);">✗</span> Flexibility</div>
-                        <div><span style="color: var(--accent);">✓</span> <span style="color: var(--accent); font-weight: 600;">Locality 보존</span></div>
-                    </div>
-                    <div style="padding: 8px; background: rgba(0,212,170,0.15); border-radius: 4px; text-align: center;">
-                        <span style="font-size: 9px; color: var(--accent); font-weight: 600;">비선형 + 토큰 유지</span>
+                    <div style="text-align: center; padding: 8px; background: rgba(0,212,170,0.15); border-radius: 4px;">
+                        <div style="font-size: 12px; color: var(--accent); font-weight: 700;">비선형 변환</div>
+                        <div style="font-size: 9px; color: var(--gray-500);">토큰 수 유지</div>
                     </div>
                 </div>
                 
                 <!-- (c) Perceiver Resampler - 대규모용 -->
-                <div style="padding: 16px; background: var(--gray-900); border: 1px solid var(--gray-700); border-radius: 8px; opacity: 0.8;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div style="padding: 14px; background: var(--gray-900); border: 1px solid var(--gray-700); border-radius: 8px; opacity: 0.85;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <div>
-                            <div style="font-size: 11px; font-weight: 700; color: var(--gray-300);">Perceiver</div>
-                            <div style="font-size: 9px; color: var(--gray-600);">Flamingo</div>
+                            <div style="font-size: 13px; font-weight: 800; color: var(--gray-300);">Perceiver</div>
+                            <div style="font-size: 10px; color: var(--gray-600);">Flamingo</div>
                         </div>
                         <div style="text-align: right;">
-                            <div style="font-size: 16px; font-weight: 900; color: var(--gray-500);">134M</div>
-                            <span class="tag tag-gray" style="font-size: 8px;">대규모용</span>
+                            <div style="font-size: 18px; font-weight: 900; color: var(--gray-500);">134M</div>
+                            <span class="tag tag-gray" style="font-size: 9px;">대규모</span>
                         </div>
                     </div>
-                    <!-- 시각화: Learnable Queries가 Visual Features에 Cross-Attention -->
-                    <div style="padding: 12px; background: var(--gray-800); border-radius: 6px; margin-bottom: 12px;">
-                        <svg width="100%" height="70" viewBox="0 0 160 70">
-                            <!-- Visual Features (K, V) - 많은 토큰 -->
-                            <text x="23" y="10" text-anchor="middle" fill="#525252" font-size="6">K, V</text>
-                            <rect x="5" y="14" width="36" height="50" rx="2" fill="none" stroke="#525252" stroke-width="1" stroke-dasharray="2"/>
-                            <circle cx="12" cy="22" r="2" fill="#525252"/>
-                            <circle cx="22" cy="22" r="2" fill="#525252"/>
-                            <circle cx="32" cy="22" r="2" fill="#525252"/>
-                            <circle cx="12" cy="32" r="2" fill="#525252"/>
-                            <circle cx="22" cy="32" r="2" fill="#525252"/>
-                            <circle cx="32" cy="32" r="2" fill="#525252"/>
-                            <circle cx="12" cy="42" r="2" fill="#525252"/>
-                            <circle cx="22" cy="42" r="2" fill="#525252"/>
-                            <circle cx="32" cy="42" r="2" fill="#525252"/>
-                            <circle cx="12" cy="52" r="2" fill="#525252"/>
-                            <circle cx="22" cy="52" r="2" fill="#525252"/>
-                            <circle cx="32" cy="52" r="2" fill="#525252"/>
+                    <!-- 직관적 시각화: Query가 정보 추출 -->
+                    <div style="padding: 14px; background: var(--gray-800); border-radius: 6px; margin-bottom: 10px;">
+                        <svg width="100%" height="55" viewBox="0 0 150 55">
+                            <!-- 입력 (많은 토큰) -->
+                            <rect x="5" y="5" width="40" height="45" rx="3" fill="none" stroke="#525252" stroke-width="1"/>
+                            <circle cx="15" cy="15" r="3" fill="#525252"/>
+                            <circle cx="25" cy="15" r="3" fill="#525252"/>
+                            <circle cx="35" cy="15" r="3" fill="#525252"/>
+                            <circle cx="15" cy="27" r="3" fill="#525252"/>
+                            <circle cx="25" cy="27" r="3" fill="#525252"/>
+                            <circle cx="35" cy="27" r="3" fill="#525252"/>
+                            <circle cx="15" cy="39" r="3" fill="#525252"/>
+                            <circle cx="25" cy="39" r="3" fill="#525252"/>
+                            <circle cx="35" cy="39" r="3" fill="#525252"/>
+                            <text x="25" y="55" text-anchor="middle" fill="#525252" font-size="7">4608</text>
                             
-                            <!-- Learnable Queries (Q) - 적은 수 고정 -->
-                            <text x="68" y="10" text-anchor="middle" fill="#ffd93d" font-size="6">Q (학습)</text>
-                            <circle cx="60" cy="20" r="4" fill="#ffd93d"/>
-                            <circle cx="76" cy="20" r="4" fill="#ffd93d"/>
+                            <!-- 학습 가능한 Query -->
+                            <circle cx="75" cy="12" r="5" fill="#ffd93d"/>
+                            <circle cx="90" cy="12" r="5" fill="#ffd93d"/>
+                            <text x="82" y="8" text-anchor="middle" fill="#ffd93d" font-size="8" font-weight="700">Query</text>
                             
-                            <!-- Cross-Attention 화살표 -->
-                            <line x1="44" y1="32" x2="52" y2="28" stroke="#525252" stroke-width="1"/>
-                            <line x1="44" y1="42" x2="52" y2="38" stroke="#525252" stroke-width="1"/>
-                            <line x1="60" y1="26" x2="60" y2="32" stroke="#ffd93d" stroke-width="1"/>
-                            <line x1="76" y1="26" x2="76" y2="32" stroke="#ffd93d" stroke-width="1"/>
+                            <!-- Cross-Attention 박스 -->
+                            <rect x="55" y="22" width="55" height="28" rx="4" fill="#737373" fill-opacity="0.2" stroke="#737373" stroke-width="1.5"/>
+                            <text x="82" y="40" text-anchor="middle" fill="#737373" font-size="9" font-weight="600">Attn</text>
                             
-                            <!-- Cross-Attention Box -->
-                            <rect x="52" y="32" width="44" height="28" rx="3" fill="#737373" fill-opacity="0.2" stroke="#737373" stroke-width="1"/>
-                            <text x="74" y="50" text-anchor="middle" fill="#737373" font-size="7">Cross-Attn</text>
+                            <!-- 화살표 -->
+                            <line x1="48" y1="27" x2="53" y2="30" stroke="#525252" stroke-width="1"/>
+                            <line x1="75" y1="18" x2="75" y2="22" stroke="#ffd93d" stroke-width="1.5"/>
+                            <line x1="90" y1="18" x2="90" y2="22" stroke="#ffd93d" stroke-width="1.5"/>
                             
-                            <!-- Output: 고정된 수의 토큰 -->
-                            <line x1="98" y1="46" x2="112" y2="46" stroke="#404040" stroke-width="1"/>
-                            <polygon points="115,46 110,43 110,49" fill="#404040"/>
-                            <circle cx="130" cy="38" r="4" fill="#737373"/>
-                            <circle cx="145" cy="38" r="4" fill="#737373"/>
-                            <circle cx="130" cy="54" r="4" fill="#737373"/>
-                            <circle cx="145" cy="54" r="4" fill="#737373"/>
-                            <text x="137" y="68" text-anchor="middle" fill="#525252" font-size="5">64 tok</text>
+                            <!-- 출력 (적은 토큰) -->
+                            <line x1="112" y1="36" x2="122" y2="36" stroke="#737373" stroke-width="1.5"/>
+                            <polygon points="125,36 120,33 120,39" fill="#737373"/>
+                            <circle cx="135" cy="28" r="5" fill="#737373"/>
+                            <circle cx="135" cy="44" r="5" fill="#737373"/>
+                            <text x="135" y="55" text-anchor="middle" fill="#525252" font-size="7">64</text>
                         </svg>
                     </div>
-                    <div style="font-size: 9px; color: var(--gray-500); margin-bottom: 8px;">
-                        <div style="margin-bottom: 4px;"><span style="color: var(--accent);">✓</span> Flexibility (토큰 수 조절)</div>
-                        <div><span style="color: var(--red);">✗</span> <span style="color: var(--gray-500);">Locality 손실</span></div>
-                    </div>
-                    <div style="padding: 8px; background: var(--gray-800); border-radius: 4px; text-align: center;">
-                        <span style="font-size: 9px; color: var(--gray-500);">4608 → 64 tokens</span>
+                    <div style="text-align: center; padding: 8px; background: var(--gray-800); border-radius: 4px;">
+                        <div style="font-size: 12px; color: var(--gray-400); font-weight: 700;">4608 → 64</div>
+                        <div style="font-size: 9px; color: var(--gray-600);">토큰 압축</div>
                     </div>
                 </div>
                 
                 <!-- (d) C-Abstractor - 대규모용 -->
-                <div style="padding: 16px; background: var(--gray-900); border: 1px solid var(--gray-700); border-radius: 8px; opacity: 0.8;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div style="padding: 14px; background: var(--gray-900); border: 1px solid var(--gray-700); border-radius: 8px; opacity: 0.85;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <div>
-                            <div style="font-size: 11px; font-weight: 700; color: var(--gray-300);">C-Abstractor</div>
-                            <div style="font-size: 9px; color: var(--gray-600);">Honeybee</div>
+                            <div style="font-size: 13px; font-weight: 800; color: var(--gray-300);">C-Abstractor</div>
+                            <div style="font-size: 10px; color: var(--gray-600);">Honeybee</div>
                         </div>
                         <div style="text-align: right;">
-                            <div style="font-size: 16px; font-weight: 900; color: var(--gray-500);">206M</div>
-                            <span class="tag tag-gray" style="font-size: 8px;">대규모용</span>
+                            <div style="font-size: 18px; font-weight: 900; color: var(--gray-500);">206M</div>
+                            <span class="tag tag-gray" style="font-size: 9px;">대규모</span>
                         </div>
                     </div>
-                    <!-- 시각화: Conv로 지역 정보 추출 + Pooling으로 압축 -->
-                    <div style="padding: 12px; background: var(--gray-800); border-radius: 6px; margin-bottom: 12px;">
-                        <svg width="100%" height="70" viewBox="0 0 160 70">
-                            <!-- Input: 2D 공간 구조 -->
-                            <text x="22" y="10" text-anchor="middle" fill="#525252" font-size="6">2D Features</text>
-                            <rect x="5" y="14" width="34" height="50" rx="2" fill="none" stroke="#525252" stroke-width="1"/>
-                            <circle cx="12" cy="22" r="3" fill="#525252"/>
-                            <circle cx="22" cy="22" r="3" fill="#525252"/>
-                            <circle cx="32" cy="22" r="3" fill="#525252"/>
-                            <circle cx="12" cy="37" r="3" fill="#525252"/>
-                            <circle cx="22" cy="37" r="3" fill="#525252"/>
-                            <circle cx="32" cy="37" r="3" fill="#525252"/>
-                            <circle cx="12" cy="52" r="3" fill="#525252"/>
-                            <circle cx="22" cy="52" r="3" fill="#525252"/>
-                            <circle cx="32" cy="52" r="3" fill="#525252"/>
+                    <!-- 직관적 시각화: Conv로 공간 정보 유지하며 압축 -->
+                    <div style="padding: 14px; background: var(--gray-800); border-radius: 6px; margin-bottom: 10px;">
+                        <svg width="100%" height="55" viewBox="0 0 150 55">
+                            <!-- 입력 (2D 그리드) -->
+                            <rect x="5" y="8" width="35" height="40" rx="3" fill="none" stroke="#525252" stroke-width="1"/>
+                            <circle cx="13" cy="17" r="4" fill="#525252"/>
+                            <circle cx="25" cy="17" r="4" fill="#525252"/>
+                            <circle cx="37" cy="17" r="4" fill="#525252"/>
+                            <circle cx="13" cy="30" r="4" fill="#525252"/>
+                            <circle cx="25" cy="30" r="4" fill="#525252"/>
+                            <circle cx="37" cy="30" r="4" fill="#525252"/>
+                            <circle cx="13" cy="43" r="4" fill="#525252"/>
+                            <circle cx="25" cy="43" r="4" fill="#525252"/>
+                            <circle cx="37" cy="43" r="4" fill="#525252"/>
                             
-                            <!-- Conv 커널 표시 (지역 정보 추출) -->
-                            <rect x="9" y="19" width="16" height="16" rx="1" fill="none" stroke="#9C27B0" stroke-width="1.5"/>
-                            <text x="17" y="42" text-anchor="middle" fill="#9C27B0" font-size="5">3×3</text>
+                            <!-- Conv 커널 표시 -->
+                            <rect x="10" y="14" width="18" height="18" rx="2" fill="none" stroke="#9C27B0" stroke-width="2"/>
                             
-                            <!-- Conv Layer -->
-                            <line x1="42" y1="38" x2="50" y2="38" stroke="#404040" stroke-width="1"/>
-                            <polygon points="53,38 48,35 48,41" fill="#404040"/>
-                            <rect x="55" y="20" width="30" height="40" rx="3" fill="#9C27B0" fill-opacity="0.15" stroke="#9C27B0" stroke-width="1"/>
-                            <text x="70" y="36" text-anchor="middle" fill="#9C27B0" font-size="6">Conv</text>
-                            <text x="70" y="48" text-anchor="middle" fill="#9C27B0" font-size="6">Layers</text>
+                            <!-- Conv 레이어 -->
+                            <line x1="43" y1="28" x2="53" y2="28" stroke="#404040" stroke-width="1.5"/>
+                            <polygon points="56,28 51,25 51,31" fill="#404040"/>
+                            <rect x="58" y="12" width="35" height="35" rx="4" fill="#9C27B0" fill-opacity="0.2" stroke="#9C27B0" stroke-width="1.5"/>
+                            <text x="75" y="28" text-anchor="middle" fill="#9C27B0" font-size="9" font-weight="700">Conv</text>
+                            <text x="75" y="40" text-anchor="middle" fill="#9C27B0" font-size="8">3×3</text>
                             
-                            <!-- Adaptive Pooling -->
-                            <line x1="88" y1="38" x2="96" y2="38" stroke="#404040" stroke-width="1"/>
-                            <polygon points="99,38 94,35 94,41" fill="#404040"/>
-                            <rect x="101" y="25" width="25" height="30" rx="3" fill="#9C27B0" fill-opacity="0.1" stroke="#9C27B0" stroke-width="1"/>
-                            <text x="113" y="38" text-anchor="middle" fill="#9C27B0" font-size="5">Pool</text>
-                            <text x="113" y="48" text-anchor="middle" fill="#9C27B0" font-size="5">↓n</text>
-                            
-                            <!-- Output: 압축된 공간 구조 유지 -->
-                            <line x1="128" y1="38" x2="134" y2="38" stroke="#404040" stroke-width="1"/>
-                            <polygon points="137,38 132,35 132,41" fill="#404040"/>
-                            <rect x="139" y="28" width="18" height="24" rx="2" fill="none" stroke="#737373" stroke-width="1"/>
-                            <circle cx="145" cy="35" r="3" fill="#737373"/>
-                            <circle cx="153" cy="35" r="3" fill="#737373"/>
-                            <circle cx="145" cy="45" r="3" fill="#737373"/>
-                            <circle cx="153" cy="45" r="3" fill="#737373"/>
-                            <text x="148" y="62" text-anchor="middle" fill="#525252" font-size="5">64 tok</text>
+                            <!-- 출력 (압축된 2D 유지) -->
+                            <line x1="95" y1="28" x2="105" y2="28" stroke="#737373" stroke-width="1.5"/>
+                            <polygon points="108,28 103,25 103,31" fill="#737373"/>
+                            <rect x="110" y="15" width="25" height="25" rx="3" fill="none" stroke="#737373" stroke-width="1"/>
+                            <circle cx="120" cy="23" r="4" fill="#737373"/>
+                            <circle cx="130" cy="23" r="4" fill="#737373"/>
+                            <circle cx="120" cy="33" r="4" fill="#737373"/>
+                            <circle cx="130" cy="33" r="4" fill="#737373"/>
+                            <text x="122" y="50" text-anchor="middle" fill="#525252" font-size="7">64</text>
                         </svg>
                     </div>
-                    <div style="font-size: 9px; color: var(--gray-500); margin-bottom: 8px;">
-                        <div style="margin-bottom: 4px;"><span style="color: var(--accent);">✓</span> Flexibility (토큰 수 조절)</div>
-                        <div><span style="color: var(--accent);">✓</span> <span style="color: var(--gray-400);">Locality 보존 (Conv)</span></div>
-                    </div>
-                    <div style="padding: 8px; background: var(--gray-800); border-radius: 4px; text-align: center;">
-                        <span style="font-size: 9px; color: var(--gray-500);">압축 + 공간정보</span>
+                    <div style="text-align: center; padding: 8px; background: var(--gray-800); border-radius: 4px;">
+                        <div style="font-size: 12px; color: var(--gray-400); font-weight: 700;">4608 → 64</div>
+                        <div style="font-size: 9px; color: var(--gray-600);">공간정보 유지</div>
                     </div>
                 </div>
             </div>
             
             <!-- 결론 -->
-            <div style="margin-top: 16px; padding: 14px 20px; background: var(--gray-900); border-left: 4px solid var(--accent); display: flex; justify-content: space-between; align-items: center;">
+            <div style="margin-top: 12px; padding: 12px 20px; background: var(--gray-900); border-left: 4px solid var(--accent); display: flex; justify-content: space-between; align-items: center;">
                 <div style="font-size: 12px; color: var(--gray-300);"><span class="accent" style="font-weight: 700;">결론</span> &nbsp; 데이터 865개 기준 → <span class="accent" style="font-weight: 700;">Linear/MLP</span> 권장 (과적합 방지)</div>
                 <div style="display: flex; gap: 16px; font-size: 10px;">
-                    <span><span style="color: var(--accent);">●</span> 권장 (소규모 데이터)</span>
-                    <span><span style="color: var(--gray-500);">●</span> 대규모 데이터용</span>
+                    <span><span style="color: var(--accent);">●</span> 권장</span>
+                    <span><span style="color: var(--gray-500);">●</span> 대규모용</span>
                 </div>
             </div>
         </section>
