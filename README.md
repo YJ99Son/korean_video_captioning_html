@@ -5,6 +5,16 @@
 
 ---
 
+## Video Demo
+
+<p align="center">
+<iframe width="720" height="405" src="https://www.youtube.com/embed/M1heDotZoRY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+> 실시간 데모는 제공되지 않습니다. 데모 영상(위)을 통해 프로젝트 결과와 주요 동작을 확인하십시오.
+
+---
+
 ## 발표 구성
 
 ### 1. 프로젝트 소개 ([01_project_intro.md](01_project_intro.md))
