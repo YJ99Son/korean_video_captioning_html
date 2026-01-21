@@ -16,8 +16,8 @@
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
             --gray-300: #d4d4d4;
-            --gray-400: #a3a3a3;
-            --gray-500: #737373;
+            --gray-400: #d4d4d4;
+            --gray-500: #a3a3a3;
             --gray-600: #525252;
             --gray-700: #404040;
             --gray-800: #262626;
@@ -345,7 +345,7 @@
     <!-- SLIDE 1: Title -->
     <div class="slide-wrapper" id="slide-0">
         <section class="slide">
-            <span class="slide-number">01 — 16</span>
+            <span class="slide-number">01 — 18</span>
             <div>
                 <p class="label">Video Captioning Project</p>
                 <h1><span class="accent">한국어</span><br>Video Captioning</h1>
@@ -358,7 +358,7 @@
     <!-- SLIDE 2: Project Philosophy -->
     <div class="slide-wrapper" id="slide-1">
         <section class="slide">
-            <span class="slide-number">02 — 16</span>
+            <span class="slide-number">02 — 18</span>
             <p class="label">Project Approach</p>
             <h2>정해진 시간과 자원 안에서 <span class="accent">할 수 있는 것</span>을 명확히</h2>
             
@@ -404,7 +404,7 @@
     <!-- SLIDE 3: Dataset EDA -->
     <div class="slide-wrapper" id="slide-2">
         <section class="slide">
-            <span class="slide-number">03 — 16</span>
+            <span class="slide-number">03 — 18</span>
             <div>
                 <p class="label">Dataset EDA</p>
                 <h2>AI Hub <span class="accent">대한민국 배경영상</span></h2>
@@ -484,10 +484,67 @@
         </section>
     </div>
 
-    <!-- SLIDE 4: LLaVA Architecture (Overview) -->
+    <!-- SLIDE 4: LLaVA 란? (Title Only) -->
     <div class="slide-wrapper" id="slide-3">
+        <section class="slide" style="display: flex; align-items: center; justify-content: center;">
+            <span class="slide-number">04 — 18</span>
+            <div style="text-align: center;">
+                <h1 style="font-size: 72px; font-weight: 900; letter-spacing: -0.04em;">LLaVA <span class="accent">란?</span></h1>
+            </div>
+        </section>
+    </div>
+
+    <!-- SLIDE 5: Basic LLM Architecture -->
+    <div class="slide-wrapper" id="slide-4">
         <section class="slide">
-            <span class="slide-number">04 — 16</span>
+            <span class="slide-number">05 — 18</span>
+            <div>
+                <p class="label">Basic Architecture</p>
+                <h2>기본 <span class="accent">LLM</span> 구조</h2>
+            </div>
+            
+            <!-- 단순 Text → LLM → Output 아키텍처 -->
+            <div style="padding: 40px; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 8px; margin-top: 40px;">
+                <svg width="100%" height="160" viewBox="0 0 900 160" preserveAspectRatio="xMidYMid meet">
+                    <!-- Text Input -->
+                    <rect x="80" y="40" width="160" height="80" rx="8" fill="#262626" stroke="#6495ED" stroke-width="3"/>
+                    <text x="160" y="75" text-anchor="middle" fill="#6495ED" font-size="14" font-weight="700">"이 영상을</text>
+                    <text x="160" y="95" text-anchor="middle" fill="#6495ED" font-size="14" font-weight="700">설명해줘"</text>
+                    <text x="160" y="135" text-anchor="middle" fill="#6495ED" font-size="13" font-weight="800">Text Input</text>
+                    
+                    <!-- Arrow -->
+                    <line x1="250" y1="80" x2="340" y2="80" stroke="#6495ED" stroke-width="3"/>
+                    <polygon points="350,80 340,72 340,88" fill="#6495ED"/>
+                    
+                    <!-- LLM -->
+                    <rect x="360" y="25" width="180" height="110" rx="8" fill="#90EE90" fill-opacity="0.2" stroke="#90EE90" stroke-width="3"/>
+                    <text x="450" y="70" text-anchor="middle" fill="#90EE90" font-size="20" font-weight="800">LLM</text>
+                    <text x="450" y="95" text-anchor="middle" fill="#90EE90" font-size="12">Next Token Prediction</text>
+                    
+                    <!-- Arrow -->
+                    <line x1="550" y1="80" x2="640" y2="80" stroke="#90EE90" stroke-width="3"/>
+                    <polygon points="650,80 640,72 640,88" fill="#90EE90"/>
+                    
+                    <!-- Output -->
+                    <rect x="660" y="40" width="160" height="80" rx="8" fill="#262626" stroke="#90EE90" stroke-width="3"/>
+                    <text x="740" y="85" text-anchor="middle" fill="#90EE90" font-size="16" font-weight="700">텍스트 출력</text>
+                    <text x="740" y="135" text-anchor="middle" fill="#90EE90" font-size="13" font-weight="800">Output</text>
+                </svg>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 16px 24px; background: var(--gray-900); border-left: 4px solid var(--accent); text-align: center;">
+                <div style="font-size: 14px; color: var(--white); font-weight: 600;">
+                    <span class="accent" style="font-weight: 700;">문제</span> &nbsp; 
+                    텍스트만 입력 가능 → <span class="accent">이미지/비디오 이해 불가</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SLIDE 6: LLaVA Architecture (Overview) -->
+    <div class="slide-wrapper" id="slide-5">
+        <section class="slide">
+            <span class="slide-number">06 — 18</span>
             <div>
                 <p class="label">Architecture</p>
                 <h2>LLaVA <span class="accent">아키텍처</span></h2>
@@ -510,7 +567,7 @@
                     <!-- Vision Encoder -->
                     <rect x="160" y="25" width="130" height="75" rx="6" fill="#87CEEB" fill-opacity="0.15" stroke="#87CEEB" stroke-width="2"/>
                     <text x="225" y="55" text-anchor="middle" fill="#87CEEB" font-size="12" font-weight="700">Vision Encoder</text>
-                    <text x="225" y="75" text-anchor="middle" fill="#525252" font-size="10">CLIP ViT</text>
+                    <text x="225" y="75" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">Vision Encoder</text>
                     <rect x="170" y="82" width="50" height="14" rx="2" fill="#525252"/>
                     <text x="195" y="92" text-anchor="middle" fill="#87CEEB" font-size="8" font-weight="700">❄️</text>
                     
@@ -545,7 +602,7 @@
                     <!-- Tokenizer -->
                     <rect x="160" y="130" width="130" height="75" rx="6" fill="#6495ED" fill-opacity="0.15" stroke="#6495ED" stroke-width="2"/>
                     <text x="225" y="160" text-anchor="middle" fill="#6495ED" font-size="12" font-weight="700">Tokenizer</text>
-                    <text x="225" y="180" text-anchor="middle" fill="#525252" font-size="10">Qwen Tokenizer</text>
+                    <text x="225" y="180" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">Tokenizer</text>
                     
                     <!-- Arrow to Token Concat (from text) -->
                     <line x1="295" y1="167" x2="540" y2="115" stroke="#6495ED" stroke-width="2"/>
@@ -572,12 +629,9 @@
                     
                     <!-- LLM -->
                     <rect x="720" y="45" width="90" height="120" rx="6" fill="#90EE90" fill-opacity="0.15" stroke="#90EE90" stroke-width="2"/>
-                    <text x="765" y="85" text-anchor="middle" fill="#90EE90" font-size="12" font-weight="700">LLM</text>
-                    <text x="765" y="102" text-anchor="middle" fill="#90EE90" font-size="9">Qwen3-8B</text>
-                    <text x="765" y="125" text-anchor="middle" fill="#525252" font-size="8">Next Token</text>
-                    <text x="765" y="138" text-anchor="middle" fill="#525252" font-size="8">Prediction</text>
-                    <rect x="730" y="145" width="55" height="14" rx="2" fill="#ffd93d"/>
-                    <text x="757" y="155" text-anchor="middle" fill="#0a0a0a" font-size="7" font-weight="700">LoRA r=16</text>
+                    <text x="765" y="85" text-anchor="middle" fill="#90EE90" font-size="14" font-weight="800">LLM</text>
+                    <text x="765" y="115" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">Next Token</text>
+                    <text x="765" y="130" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">Prediction</text>
                     
                     <!-- Arrow to Output -->
                     <line x1="815" y1="105" x2="840" y2="105" stroke="#90EE90" stroke-width="2"/>
@@ -586,26 +640,26 @@
                     <!-- Output -->
                     <rect x="850" y="70" width="45" height="70" rx="6" fill="#262626" stroke="#90EE90" stroke-width="2"/>
                     <text x="872" y="100" text-anchor="middle" fill="#90EE90" font-size="10" font-weight="600">출력</text>
-                    <text x="872" y="118" text-anchor="middle" fill="#a3a3a3" font-size="8">캡션</text>
+                    <text x="872" y="118" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="600">캡션</text>
                 </svg>
             </div>
             
             <!-- 핵심 설명 -->
             <div style="margin-top: 14px; padding: 14px 20px; background: var(--gray-900); border-left: 4px solid var(--accent);">
-                <div style="font-size: 12px; color: var(--gray-300); line-height: 1.7;">
+                <div style="font-size: 12px; color: var(--white); line-height: 1.7; font-weight: 500;">
                     <span class="accent" style="font-weight: 700;">핵심</span> &nbsp; 
                     <span style="color: #87CEEB;">Image</span> → Vision Encoder → <span class="accent">Projector</span> → <span style="color: #FFB366;">Visual Tokens</span><br>
                     <span style="color: #6495ED;">Text Instruction</span> → Tokenizer → <span style="color: #6495ED;">Text Tokens</span><br>
-                    <span style="color: var(--gray-500);">LLM은 [Visual + Text] 토큰 시퀀스를 받아 다음 토큰만 예측</span>
+                    LLM은 [Visual + Text] 토큰 시퀀스를 받아 다음 토큰만 예측
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- SLIDE 5: Goals -->
-    <div class="slide-wrapper" id="slide-4">
+    <!-- SLIDE 7: Goals -->
+    <div class="slide-wrapper" id="slide-6">
         <section class="slide">
-            <span class="slide-number">05 — 16</span>
+            <span class="slide-number">07 — 18</span>
             <div>
                 <p class="label">Goals</p>
                 <h2>핵심 질문 & <span class="accent">목표</span></h2>
@@ -646,7 +700,7 @@
     <!-- SLIDE 6: Experiment Plan -->
     <div class="slide-wrapper" id="slide-5">
         <section class="slide">
-            <span class="slide-number">06 — 16</span>
+            <span class="slide-number">06 — 18</span>
             <div>
                 <p class="label">Experiment Plan</p>
                 <h2>실험 <span class="accent">계획</span></h2>
@@ -696,20 +750,15 @@
                             <span style="font-size: 12px;">최종 분석 + 발표 자료 작성</span>
                         </div>
                     </div>
-                    <div
-                        style="margin-top: 12px; padding: 12px; background: var(--gray-900); border-left: 3px solid var(--accent);">
-                        <div style="font-size: 11px; color: var(--gray-300);"><span class="accent">핵심 가설</span> 작은
-                            데이터(865)에서는 단순 Projector가 더 안정적</div>
-                    </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- SLIDE 7: LLaVA Architecture - 명확한 두 인풋 -->
-    <div class="slide-wrapper" id="slide-6">
+    <!-- SLIDE 9: LLaVA Architecture - 명확한 두 인풋 -->
+    <div class="slide-wrapper" id="slide-8">
         <section class="slide">
-            <span class="slide-number">07 — 16</span>
+            <span class="slide-number">09 — 18</span>
             <div>
                 <p class="label">Architecture</p>
                 <h2>LLaVA <span class="accent">아키텍처</span></h2>
@@ -732,7 +781,7 @@
                     <!-- Vision Encoder -->
                     <rect x="160" y="25" width="130" height="75" rx="6" fill="#87CEEB" fill-opacity="0.15" stroke="#87CEEB" stroke-width="2"/>
                     <text x="225" y="55" text-anchor="middle" fill="#87CEEB" font-size="12" font-weight="700">Vision Encoder</text>
-                    <text x="225" y="75" text-anchor="middle" fill="#525252" font-size="10">CLIP ViT</text>
+                    <text x="225" y="75" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">Vision Encoder</text>
                     <rect x="170" y="82" width="50" height="14" rx="2" fill="#525252"/>
                     <text x="195" y="92" text-anchor="middle" fill="#87CEEB" font-size="8" font-weight="700">❄️</text>
                     
@@ -767,7 +816,7 @@
                     <!-- Tokenizer -->
                     <rect x="160" y="130" width="130" height="75" rx="6" fill="#6495ED" fill-opacity="0.15" stroke="#6495ED" stroke-width="2"/>
                     <text x="225" y="160" text-anchor="middle" fill="#6495ED" font-size="12" font-weight="700">Tokenizer</text>
-                    <text x="225" y="180" text-anchor="middle" fill="#525252" font-size="10">Qwen Tokenizer</text>
+                    <text x="225" y="180" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="600">Tokenizer</text>
                     
                     <!-- Arrow to Token Concat (from text) -->
                     <line x1="295" y1="167" x2="540" y2="115" stroke="#6495ED" stroke-width="2"/>
@@ -824,10 +873,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 8: Video-LLaVA Architecture + Training Strategy -->
-    <div class="slide-wrapper" id="slide-7">
+    <!-- SLIDE 10: Video-LLaVA Architecture + Training Strategy -->
+    <div class="slide-wrapper" id="slide-9">
         <section class="slide">
-            <span class="slide-number">08 — 16</span>
+            <span class="slide-number">10 — 18</span>
             <div>
                 <p class="label">Architecture + Training</p>
                 <h2>Video-LLaVA <span class="accent">Pipeline & 학습 전략</span></h2>
@@ -992,10 +1041,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 9: 모델 선택 (Vision Encoder + LLM + Projector 요약) -->
-    <div class="slide-wrapper" id="slide-8">
+    <!-- SLIDE 11: 모델 선택 (Vision Encoder + LLM + Projector 요약) -->
+    <div class="slide-wrapper" id="slide-10">
         <section class="slide">
-            <span class="slide-number">09 — 16</span>
+            <span class="slide-number">11 — 18</span>
             <div>
                 <p class="label">Model Selection</p>
                 <h2>컴포넌트 <span class="accent">선택</span></h2>
@@ -1072,10 +1121,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 10: Projector Detail Explanation -->
-    <div class="slide-wrapper" id="slide-9">
+    <!-- SLIDE 12: Projector Detail Explanation -->
+    <div class="slide-wrapper" id="slide-11">
         <section class="slide">
-            <span class="slide-number">10 — 16</span>
+            <span class="slide-number">12 — 18</span>
             <div>
                 <p class="label">Architecture Detail</p>
                 <h2>Projector <span class="accent">상세 구조</span></h2>
@@ -1337,22 +1386,13 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- 결론 -->
-            <div style="margin-top: 12px; padding: 12px 20px; background: var(--gray-900); border-left: 4px solid var(--accent); display: flex; justify-content: space-between; align-items: center;">
-                <div style="font-size: 12px; color: var(--gray-300);"><span class="accent" style="font-weight: 700;">결론</span> &nbsp; 데이터 865개 기준 → <span class="accent" style="font-weight: 700;">Linear/MLP</span> 권장 (과적합 방지)</div>
-                <div style="display: flex; gap: 16px; font-size: 10px;">
-                    <span><span style="color: var(--accent);">●</span> 토큰 유지</span>
-                    <span><span style="color: var(--red);">●</span> 토큰 압축</span>
-                </div>
-            </div>
         </section>
     </div>
 
-    <!-- SLIDE 11: Optimizations Mapped to Architecture -->
-    <div class="slide-wrapper" id="slide-10">
+    <!-- SLIDE 13: Optimizations Mapped to Architecture -->
+    <div class="slide-wrapper" id="slide-12">
         <section class="slide">
-            <span class="slide-number">11 — 16</span>
+            <span class="slide-number">13 — 18</span>
             <div>
                 <p class="label">Optimizations</p>
                 <h2>적용된 <span class="accent">최적화</span></h2>
@@ -1420,7 +1460,7 @@
     <!-- SLIDE 12: Memory Usage Table -->
     <div class="slide-wrapper" id="slide-11">
         <section class="slide">
-            <span class="slide-number">12 — 16</span>
+            <span class="slide-number">12 — 18</span>
             <div>
                 <p class="label">Memory Analysis</p>
                 <h2>메모리 <span class="accent">사용량</span></h2>
@@ -1472,26 +1512,18 @@
                 </div>
                 <!-- 합계 -->
                 <div style="display: grid; grid-template-columns: 1.5fr 1fr 2fr; padding: 14px 20px; background: var(--gray-800);">
-                    <div style="font-size: 13px; font-weight: 800; color: var(--accent);">TOTAL</div>
-                    <div style="font-size: 16px; font-weight: 900; color: var(--accent); text-align: right;">~50GB</div>
-                    <div style="font-size: 12px; font-weight: 600; color: var(--accent); text-align: right;">A100 80GB ✓ 충분</div>
-                </div>
-            </div>
-            
-            <!-- 결론 -->
-            <div style="margin-top: 20px; padding: 14px 20px; background: var(--gray-900); border-left: 4px solid var(--accent);">
-                <div style="font-size: 12px; color: var(--gray-300);">
-                    <span class="accent" style="font-weight: 700;">결론</span> &nbsp; 
-                    최적화 기법 적용으로 A100 80GB에서 <span class="accent">배치사이즈 16</span>으로 안정적 학습 가능
+                    <div style="font-size: 14px; font-weight: 900; color: var(--accent);">TOTAL</div>
+                    <div style="font-size: 18px; font-weight: 900; color: var(--accent); text-align: right;">~50GB</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--accent); text-align: right;">A100 80GB ✓ 충분</div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- SLIDE 13: Results -->
-    <div class="slide-wrapper" id="slide-12">
+    <!-- SLIDE 15: Results -->
+    <div class="slide-wrapper" id="slide-14">
         <section class="slide">
-            <span class="slide-number">13 — 16</span>
+            <span class="slide-number">15 — 18</span>
             <div>
                 <p class="label">Results</p>
                 <h2>실험 <span class="accent">결과</span></h2>
@@ -1541,7 +1573,7 @@
     <!-- SLIDE 14: Key Lessons -->
     <div class="slide-wrapper" id="slide-13">
         <section class="slide">
-            <span class="slide-number">14 — 16</span>
+            <span class="slide-number">14 — 18</span>
             <div>
                 <p class="label">Lessons Learned</p>
                 <h2>핵심 <span class="accent">교훈</span></h2>
@@ -1566,10 +1598,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 15: Decision Options -->
-    <div class="slide-wrapper" id="slide-14">
+    <!-- SLIDE 17: Decision Options -->
+    <div class="slide-wrapper" id="slide-16">
         <section class="slide">
-            <span class="slide-number">15 — 16</span>
+            <span class="slide-number">17 — 18</span>
             <div>
                 <p class="label">Experiment Status</p>
                 <h2>실험 <span class="accent">현황</span></h2>
@@ -1689,10 +1721,10 @@
         </section>
     </div>
 
-    <!-- SLIDE 16: Roadmap -->
-    <div class="slide-wrapper" id="slide-15">
+    <!-- SLIDE 18: Roadmap -->
+    <div class="slide-wrapper" id="slide-17">
         <section class="slide" style="text-align: center;">
-            <span class="slide-number">16 — 16</span>
+            <span class="slide-number">18 — 18</span>
             <div style="max-width: 800px; margin: 0 auto;">
                 <p class="label">Roadmap</p>
                 <h2>다음 <span class="accent">단계</span></h2>
